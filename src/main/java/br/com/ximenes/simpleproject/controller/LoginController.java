@@ -3,12 +3,14 @@ package br.com.ximenes.simpleproject.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
 import br.com.ximenes.simpleproject.dao.UsuarioDao;
 import br.com.ximenes.simpleproject.model.TipoUsuario;
 import br.com.ximenes.simpleproject.model.Usuario;
+import br.com.ximenes.simpleproject.security.Protecao;
 import br.com.ximenes.simpleproject.security.UsuarioLogado;
 
 @Controller
@@ -38,11 +40,11 @@ public class LoginController {
 			
 			if(usuario.getTipo()==TipoUsuario.NORMAL){
 				usuarioLogado.fazLogin(usuario);
-				result.redirectTo(IndexController.class).index();
+				result.redirectTo(IndexController.class).dashboard();
 			}else{
 				if(usuario.getTipo()==TipoUsuario.ADMIN){
 					usuarioLogado.fazLogin(usuario);
-					result.redirectTo(IndexController.class).index();
+					result.redirectTo(IndexController.class).dashboard();
 				}else{
 					result.redirectTo(IndexController.class).index();
 				}

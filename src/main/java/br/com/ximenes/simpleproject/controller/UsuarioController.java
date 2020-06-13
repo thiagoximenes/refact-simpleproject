@@ -34,7 +34,6 @@ public class UsuarioController {
 	
 	public UsuarioController(){}
 	
-	//	LISTA DOS USUÁRIOS (dados de cadastro)
 	@Protecao(tipo={TipoUsuario.ADMIN})
 	@Path("usuarios/lista")
 	public void lista() {
@@ -43,7 +42,6 @@ public class UsuarioController {
 		result.include("usuarios",usuarios);
 	}
 	
-	//	CADASTRO DE USUÁRIOS (dados de cadastro)
 	@Protecao(tipo={TipoUsuario.ADMIN, TipoUsuario.NORMAL})
 	@Path("/usuarios/novo")
 	public void novo() {

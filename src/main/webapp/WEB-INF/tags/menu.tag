@@ -19,9 +19,17 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="${linkTo[IndexController].index() }">Home
-          <span class="sr-only">(current)</span>
-        </a>
+      <c:if test="${usuarioLogado.usuario.tipo == null}">
+		<a class="nav-link" href="${linkTo[IndexController].index() }">Home
+			<span class="sr-only">(current)</span>
+		</a>
+		</c:if>
+        <c:if test="${usuarioLogado.usuario.tipo != null}">
+	        <a class="nav-link" href="${linkTo[IndexController].dashboard() }">Dashboard
+	          <span class="sr-only">(current)</span>
+	        </a>
+        </c:if>
+        
       </li>
       <li class="nav-item">
         <a class="nav-link" href="${linkTo[UsuarioController].lista()}">Users</a>
