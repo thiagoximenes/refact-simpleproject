@@ -3,23 +3,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../header.jsp" %> 
 
-<div class="row">
-	<div class="col-12">
-		
+<div class="header-body pt-3 pb-3">
+	<div class="row align-items-end">
+		<div class="col">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="${linkTo[IndexController].index() }">Simple Project</a></li>
+					<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[UsuarioController].lista() }">Users</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Perfil</li>
+				</ol>
+			</nav>
+			<h4>My perfil</h4>
+		</div>
 	</div>
 </div>
 
-<nav aria-label="breadcrumb">
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="${linkTo[IndexController].index() }">Simple Project</a></li>
-		<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[UsuarioController].lista() }">Users</a></li>
-		<li class="breadcrumb-item active" aria-current="page">Perfil</li>
-	</ol>
-</nav>
 
 <div class="grupo">
 	<input type="hidden" id="bs-senha" class="invis" value="${usuarioLogado.usuario.senha}"/>
-	<h4 class="titulo1">Meu Perfil</h4>
 	<div class="view-content">
 		<h4 class="titulo2"></h4>
 		<h3>${usuarioLogado.usuario.nome} ${usuarioLogado.usuario.sobrenome}</h3>
