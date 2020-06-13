@@ -30,11 +30,6 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	
-	<div class="row justify-content-center">
-	</div>
 		
 <!-- 		Mensagens Sucesso -->
 		<c:if test="${usuario_msg_a != null}">
