@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark primary-color">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Simple Project</a>
+  <a class="navbar-brand" href="${linkTo[IndexController].index() }">Simple Project</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -18,22 +18,23 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-      <c:if test="${usuarioLogado.usuario.tipo == null}">
-		<a class="nav-link" href="${linkTo[IndexController].index() }">Home
-			<span class="sr-only">(current)</span>
-		</a>
+		<li class="nav-item">
+			<c:if test="${usuarioLogado.usuario.tipo == null}">
+				<a class="nav-link" href="${linkTo[IndexController].index() }">Home
+					<span class="sr-only">(current)</span>
+				</a>
+			</c:if>
+			<c:if test="${usuarioLogado.usuario.tipo != null}">
+				<a class="nav-link" href="${linkTo[IndexController].dashboard() }">Dashboard
+					<span class="sr-only">(current)</span>
+				</a>
+			</c:if>
+		</li>
+		<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN'}">
+			<li class="nav-item">
+				<a class="nav-link" href="${linkTo[UsuarioController].lista()}">Users</a>
+			</li>
 		</c:if>
-        <c:if test="${usuarioLogado.usuario.tipo != null}">
-	        <a class="nav-link" href="${linkTo[IndexController].dashboard() }">Dashboard
-	          <span class="sr-only">(current)</span>
-	        </a>
-        </c:if>
-        
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${linkTo[UsuarioController].lista()}">Users</a>
-      </li>
       
 <%--       <c:if test="${usuarioLogado.usuario.tipo=='ADMIN'}"> --%>
 <!-- 		<li class="nav-item"> -->

@@ -67,7 +67,7 @@
     <div class="modal-content">
       <div class="modal-header titulo1-insta">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Trocar senha</h4>
+        <h4 class="modal-title" id="myModalLabel">Change password</h4>
       </div>
       <div class="modal-body">
 		<c:import url="../forms/form-usuario-alterasenha.jsp"></c:import>
