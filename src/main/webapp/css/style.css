@@ -1,0 +1,58 @@
+@CHARSET "ISO-8859-1";
+
+html, body, p, a, table, ul, li, label, div, h1, h2, h3, h4 {
+}
+
+.bg-login {
+	background-color: #f9fbfd;
+	background-size: cover; /*Css padrão*/
+	-webkit-background-size: cover; /*Css safari e chrome*/
+	-moz-background-size: cover; /*Css firefox*/
+	-ms-background-size: cover; /*Css IE não use mer#^@%#*/
+	-o-background-size: cover; /*Css Opera*/
+}
+
+.bg-dark {
+    background-color: #1a2b3c !important;
+}
+
+.dropdown-toggle::after{
+	content: none;
+}
+
+/* temporary */
+div.btn-group, li.dropdown{
+	cursor: pointer;
+}
+
+table tr td, table tr th{
+	word-wrap:break-word;
+}
+
+.breadcrumb {
+	background-color: transparent!important;
+	text-transform: uppercase!important;
+	font-size: 0.7rem;
+}
+
+a {
+	color: #c1c1c1;
+	transition: 0.1s;
+}
+
+a:hover, a:focus{
+	text-decoration: none;
+	color: #901db9;
+	transition: 0.1s;
+}
+
+table{
+	border-collapse: collapse;
+    color: #344b64 !important;
+}
+
+
+
+
+
+
