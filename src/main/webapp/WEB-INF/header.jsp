@@ -1,5 +1,5 @@
 <%@taglib tagdir="/WEB-INF/tags" prefix="template"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -25,25 +25,27 @@
 <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> -->
 
 <!-- Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+	rel="stylesheet">
 
 <!-- CSS Import -->
-<link href="<c:url value="/css/plugins/bootstrap/bootstrap.min.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/plugins/bootstrap/bootstrap.min.css"/>"
+	rel="stylesheet" type="text/css" />
 <%-- <link href="<c:url value="/css/plugins/bootstrap/bootstrap-theme.css"/>" rel="stylesheet" type="text/css" /> --%>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
-<link href="<c:url value="/css/plugins/sweetalert/sweetalert.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/plugins/sweetalert/sweetalert.css"/>"
+	rel="stylesheet" type="text/css" />
 
-<link href="<c:url value="/css/style.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/style.css"/>" rel="stylesheet"
+	type="text/css" />
 <%-- <link href="<c:url value="/css/bootstrap-datepicker.css"/>" rel="stylesheet" type="text/css"> --%>
 
 
 </head>
 <body class="bg-login">
 
-	<template:menu/>
+	<template:menu />
 
 	<div id="content">
 		<div class="container-fluid">
-
-		
-		

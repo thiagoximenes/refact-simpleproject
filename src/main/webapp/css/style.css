@@ -1,6 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 html, body, p, a, table, ul, li, label, div, h1, h2, h3, h4 {
+	
 }
 
 .bg-login {
@@ -13,25 +14,25 @@ html, body, p, a, table, ul, li, label, div, h1, h2, h3, h4 {
 }
 
 .bg-dark {
-    background-color: #1a2b3c !important;
+	background-color: #1a2b3c !important;
 }
 
-.dropdown-toggle::after{
+.dropdown-toggle::after {
 	content: none;
 }
 
 /* temporary */
-div.btn-group, li.dropdown{
+div.btn-group, li.dropdown {
 	cursor: pointer;
 }
 
-table tr td, table tr th{
-	word-wrap:break-word;
+table tr td, table tr th {
+	word-wrap: break-word;
 }
 
 .breadcrumb {
-	background-color: transparent!important;
-	text-transform: uppercase!important;
+	background-color: transparent !important;
+	text-transform: uppercase !important;
 	font-size: 0.7rem;
 }
 
@@ -40,19 +41,20 @@ a {
 	transition: 0.1s;
 }
 
-a:hover, a:focus{
+a:hover, a:focus {
 	text-decoration: none;
 	color: #901db9;
 	transition: 0.1s;
 }
 
-table{
+table {
 	border-collapse: collapse;
-    color: #344b64 !important;
+	color: #646464 !important;
 }
 
-
-
-
-
-
+.form-signin{
+	width: 100%;
+	max-width: 420px;
+	padding: 15px;
+	margin: 0 auto;
+}

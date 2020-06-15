@@ -10,28 +10,28 @@ import br.com.ximenes.simpleproject.model.Usuario;
 
 @Named
 @SessionScoped
-public class UsuarioLogado implements Serializable{
+public class UsuarioLogado implements Serializable {
 
 	private static final long serialVersionUID = -2008364164879857618L;
 
 	private Usuario usuario;
-	
+
 	public Usuario getUsuario() {
-	    return this.usuario;
+		return this.usuario;
 	}
-	
+
 	public TipoUsuario getTipo() {
 		return usuario.getTipo();
 	}
-	
+
 	public void fazLogin(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
+
 	public void desloga() {
 		this.usuario = null;
 	}
-	
+
 	public boolean isLogado() {
 		return this.usuario != null;
 	}

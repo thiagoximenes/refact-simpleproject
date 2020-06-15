@@ -21,31 +21,31 @@ public class ProtecaoInterceptor {
 	private UsuarioLogado usuarioLogado;
 	private Result result;
 	private ControllerMethod method;
-	
-	public ProtecaoInterceptor () {}
-	
+
+	public ProtecaoInterceptor() {
+	}
+
 	@Inject
 	public ProtecaoInterceptor(UsuarioLogado usuarioLogado, Result result, ControllerMethod method) {
 		this.usuarioLogado = usuarioLogado;
 		this.result = result;
 		this.method = method;
 	}
-	
+
 	@Accepts
 	public boolean accept() {
 		return method.containsAnnotation(Protecao.class);
 	}
-	
+
 	@AroundCall
 	public void intercept(SimpleInterceptorStack stack) {
-		
+
 		List<TipoUsuario> tipos = Arrays.asList(method.getMethod().getAnnotation(Protecao.class).tipo());
-		
-		
-		if(usuarioLogado.isLogado()){
-				if(tipos.contains(usuarioLogado.getTipo())){
-					stack.next();
-				} else {
+
+		if (usuarioLogado.isLogado()) {
+			if (tipos.contains(usuarioLogado.getTipo())) {
+				stack.next();
+			} else {
 				result.redirectTo(IndexController.class).index();
 			}
 		} else {

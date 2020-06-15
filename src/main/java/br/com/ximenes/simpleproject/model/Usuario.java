@@ -22,36 +22,36 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = -5469692683914786515L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@NotNull(message="{usuario.nome.vazio}")
-	@Length(min = 3, max = 15, message="{usuario.nome.tamanho}")
+
+	@NotNull(message = "{usuario.nome.vazio}")
+	@Length(min = 3, max = 15, message = "{usuario.nome.tamanho}")
 	private String nome;
-	
-	@NotNull(message="{usuario.sobrenome.vazio}")
-	@Length(min = 3, max = 55, message="{usuario.sobrenome.tamanho}")
+
+	@NotNull(message = "{usuario.sobrenome.vazio}")
+	@Length(min = 3, max = 55, message = "{usuario.sobrenome.tamanho}")
 	private String sobrenome;
-	
-	@NotNull(message="{usuario.email.vazio}")
-	@Length(min = 6, max = 55, message="{usuario.email.tamanho}")
-	@Email(message="{usuario.email.verifica}")
-	@Column(unique=true)
+
+	@NotNull(message = "{usuario.email.vazio}")
+	@Length(min = 6, max = 55, message = "{usuario.email.tamanho}")
+	@Email(message = "{usuario.email.verifica}")
+	@Column(unique = true)
 	private String email;
 
 	@Enumerated(EnumType.STRING)
-	@NotNull(message="{usuario.tipo.vazio}")
+	@NotNull(message = "{usuario.tipo.vazio}")
 	private TipoUsuario tipo;
-	
-	@NotNull(message="{usuario.login.vazio}")
-	@Length(min = 4, max = 30, message="{usuario.login.tamanho}")
+
+	@NotNull(message = "{usuario.login.vazio}")
+	@Length(min = 4, max = 30, message = "{usuario.login.tamanho}")
 	@Pattern(regexp = "[a-z0-9_]+", message = "{usuario.login.verifica}")
 	private String login;
-	
-	@NotNull(message="{usuario.senha.vazio}")
-	@Length(min = 4, max = 30, message="{usuario.senha.tamanho}")
+
+	@NotNull(message = "{usuario.senha.vazio}")
+	@Length(min = 4, max = 30, message = "{usuario.senha.tamanho}")
 	private String senha;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -75,7 +75,7 @@ public class Usuario implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public String getSobrenome() {
 		return sobrenome;
 	}
@@ -83,7 +83,7 @@ public class Usuario implements Serializable {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}

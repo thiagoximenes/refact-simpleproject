@@ -24,38 +24,39 @@ public class UsuarioController {
 	private UsuarioDao usuarioDao;
 	private Result result;
 	private Validator validator;
-	
+
 	@Inject
-	public UsuarioController(UsuarioDao usuarioDao	, Result result, Validator validator) {
+	public UsuarioController(UsuarioDao usuarioDao, Result result, Validator validator) {
 		this.usuarioDao = usuarioDao;
 		this.result = result;
 		this.validator = validator;
 	}
-	
-	public UsuarioController(){}
-	
-	@Protecao(tipo={TipoUsuario.ADMIN})
+
+	public UsuarioController() {
+	}
+
+	@Protecao(tipo = { TipoUsuario.ADMIN })
 	@Path("usuarios/lista")
 	public void lista() {
 		List<Usuario> usuarios = usuarioDao.lista();
 		result.include("tipoUsuario", TipoUsuario.values());
-		result.include("usuarios",usuarios);
+		result.include("usuarios", usuarios);
 	}
-	
-	@Protecao(tipo={TipoUsuario.ADMIN, TipoUsuario.NORMAL})
+
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
 	@Path("/usuarios/novo")
 	public void novo() {
 		result.include("tipoUsuario", TipoUsuario.values());
 	}
-	
-	//	EDIÇÃO DE USUÁRIOS (dados de cadastro)
-	@Protecao(tipo={TipoUsuario.ADMIN, TipoUsuario.NORMAL})
+
+	// EDIÇÃO DE USUÁRIOS (dados de cadastro)
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
 	@Get("/usuarios/{id}")
-	public Usuario edita (int id){
+	public Usuario edita(int id) {
 		result.include("tipoUsuario", TipoUsuario.values());
-	    return usuarioDao.carrega(id);
+		return usuarioDao.carrega(id);
 	}
-	
+
 ////	EDIÇÃO DE USUÁRIOS (dados de cadastro)
 //	@Protecao(tipo={TipoUsuario.NORMAL})
 //	@Get("/usuarios/perfil/{id}")
@@ -63,23 +64,23 @@ public class UsuarioController {
 //		result.include("tipoUsuario", TipoUsuario.values());
 //	    return usuarioDao.carrega(id);
 //	}
-	
-	@Protecao(tipo={TipoUsuario.ADMIN})
+
+	@Protecao(tipo = { TipoUsuario.ADMIN })
 	@Get("/usuarios/{id}/view")
-	public Usuario view (int id){
+	public Usuario view(int id) {
 		result.include("tipoUsuario", TipoUsuario.values());
-	    return usuarioDao.carrega(id);
+		return usuarioDao.carrega(id);
 	}
-	
-	@Protecao(tipo={TipoUsuario.ADMIN, TipoUsuario.NORMAL})
+
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
 	@Get("/usuarios/perfil")
-	public Usuario perfil (int id){
+	public Usuario perfil(int id) {
 		result.include("tipoUsuario", TipoUsuario.values());
-	    return usuarioDao.carrega(id);
+		return usuarioDao.carrega(id);
 	}
-	
-	//	ADICIONA USUÁRIOS
-	@Protecao(tipo={TipoUsuario.ADMIN, TipoUsuario.NORMAL})
+
+	// ADICIONA USUÁRIOS
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
 	@IncludeParameters
 	public void adiciona(@Valid Usuario usuario) {
 		validator.onErrorRedirectTo(this).novo();
@@ -87,9 +88,9 @@ public class UsuarioController {
 		result.include("usuario_msg_a", "Usuário adicionado com sucesso!");
 		result.redirectTo(this).lista();
 	}
-	
-	//	REMOVE USUÁRIOS
-	@Protecao(tipo={TipoUsuario.ADMIN})
+
+	// REMOVE USUÁRIOS
+	@Protecao(tipo = { TipoUsuario.ADMIN })
 	@Remove
 	public void remove(Usuario usuario) {
 		usuarioDao.remove(usuario);
@@ -97,16 +98,16 @@ public class UsuarioController {
 		result.redirectTo(this).lista();
 	}
 
-	//FUNC. EDIÇÃO USUÁRIOS
-	@Protecao(tipo={TipoUsuario.ADMIN, TipoUsuario.NORMAL})
+	// FUNC. EDIÇÃO USUÁRIOS
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
 	@Put("/usuarios/{usuario.id}")
-	public void altera(@Valid Usuario usuario){
+	public void altera(@Valid Usuario usuario) {
 		validator.onErrorRedirectTo(this).edita(usuario.getId());
-	    usuarioDao.atualiza(usuario);
-	    result.include("usuario_msg_e", "Usuário modificado com sucesso!");
-	    result.redirectTo(this).lista();
+		usuarioDao.atualiza(usuario);
+		result.include("usuario_msg_e", "Usuário modificado com sucesso!");
+		result.redirectTo(this).lista();
 	}
-	
+
 //	//FUNC. EDIÇÃO USUÁRIOS
 //	@Protecao(tipo={TipoUsuario.NORMAL})
 //	@Put("/usuarios/perfil/{usuarioLogado.usuario.id}")
@@ -116,14 +117,14 @@ public class UsuarioController {
 //	    result.include("usuario_msg_e", "Usuário modificado com sucesso!");
 //	    result.redirectTo(this).lista();
 //	}
-	
-	//FUNC. EDIÇÃO USUÁRIOS
-		@Protecao(tipo={TipoUsuario.ADMIN})
-		@Put("/usuarios/{usuario.id}/view")
-		public void view(@Valid Usuario usuario){
-			validator.onErrorRedirectTo(this).edita(usuario.getId());
+
+	// FUNC. EDIÇÃO USUÁRIOS
+	@Protecao(tipo = { TipoUsuario.ADMIN })
+	@Put("/usuarios/{usuario.id}/view")
+	public void view(@Valid Usuario usuario) {
+		validator.onErrorRedirectTo(this).edita(usuario.getId());
 //		    usuarioDao.atualiza(usuario);
 //		    result.redirectTo(this).lista();
-		}
-	
+	}
+
 }

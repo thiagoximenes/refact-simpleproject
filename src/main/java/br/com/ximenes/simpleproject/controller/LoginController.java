@@ -20,41 +20,43 @@ public class LoginController {
 	private UsuarioLogado usuarioLogado;
 	private Result result;
 	private Validator validator;
-	
-	public LoginController() {}
-	
+
+	public LoginController() {
+	}
+
 	@Inject
-	public LoginController (UsuarioDao usuarioDao, UsuarioLogado usuarioLogado, Result result, Validator validator) {
+	public LoginController(UsuarioDao usuarioDao, UsuarioLogado usuarioLogado, Result result, Validator validator) {
 		this.usuarioDao = usuarioDao;
 		this.usuarioLogado = usuarioLogado;
 		this.result = result;
 		this.validator = validator;
-		
+
 	}
-	
-	public void form() {}
-	
+
+	public void form() {
+	}
+
 	public void autentica(String login, String senha) {
 		Usuario usuario = usuarioDao.busca(login, senha);
-		if(usuario != null) {
-			
-			if(usuario.getTipo()==TipoUsuario.NORMAL){
+		if (usuario != null) {
+
+			if (usuario.getTipo() == TipoUsuario.NORMAL) {
 				usuarioLogado.fazLogin(usuario);
 				result.redirectTo(IndexController.class).dashboard();
-			}else{
-				if(usuario.getTipo()==TipoUsuario.ADMIN){
+			} else {
+				if (usuario.getTipo() == TipoUsuario.ADMIN) {
 					usuarioLogado.fazLogin(usuario);
 					result.redirectTo(IndexController.class).dashboard();
-				}else{
+				} else {
 					result.redirectTo(IndexController.class).index();
 				}
 			}
-		}else {
+		} else {
 			validator.add(new SimpleMessage("login_invalido", "Login ou senha incorretos."));
 			validator.onErrorRedirectTo(this).form();
 		}
 	}
-	
+
 	public void desloga() {
 		usuarioLogado.desloga();
 		result.redirectTo(this).form();

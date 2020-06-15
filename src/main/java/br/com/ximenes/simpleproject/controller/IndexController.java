@@ -20,7 +20,7 @@ public class IndexController {
 	protected IndexController() {
 		this(null);
 	}
-	
+
 	@Inject
 	public IndexController(Result result) {
 		this.result = result;
@@ -30,8 +30,9 @@ public class IndexController {
 	public void index() {
 		result.include("variable", "VRaptor!");
 	}
-	
+
 	@Get("/dashboard")
-	@Protecao(tipo={TipoUsuario.ADMIN, TipoUsuario.NORMAL})
-	public void dashboard() {}
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
+	public void dashboard() {
+	}
 }

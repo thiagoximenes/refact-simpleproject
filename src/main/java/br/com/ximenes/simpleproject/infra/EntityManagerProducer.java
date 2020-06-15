@@ -12,10 +12,10 @@ import javax.persistence.Persistence;
 public class EntityManagerProducer {
 
 	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("default");
-	
+
 	@Produces
 	@RequestScoped
-	public EntityManager getEntityManager(){
+	public EntityManager getEntityManager() {
 		return factory.createEntityManager();
 	}
 
