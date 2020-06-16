@@ -9,7 +9,7 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a
-						href="${linkTo[IndexController].index() }">Simple Project</a></li>
+						href="${linkTo[IndexController].dashboard() }">Simple Project</a></li>
 					<li class="breadcrumb-item" aria-current="page"><a
 						href="${linkTo[UsuarioController].lista() }">Users</a></li>
 					<li class="breadcrumb-item active" aria-current="page">List</li>
@@ -18,12 +18,10 @@
 			<h4>Usuários</h4>
 		</div>
 		<div class="col-auto">
-			<c:if test="${usuarioLogado.usuario.tipo=='ADMIN'}">
-				<a class="btn btn-success"
-					href="${linkTo[UsuarioController].novo()}"> <i
-					class="fas fa-plus"></i> Novo Usuário
-				</a>
-			</c:if>
+			<a class="btn btn-success"
+				href="${linkTo[UsuarioController].novo()}"> <i
+				class="fas fa-plus"></i> Novo Usuário
+			</a>
 		</div>
 	</div>
 	<div class="row align-items-end">
@@ -65,53 +63,22 @@
 		<tbody class="usuario-body">
 			<c:forEach items="${usuarios}" var="usuario">
 				<tr class="d-flex tr-item">
-					<td class="col-3" id="nome">
-						<div class="btn-group dd-btn hidden-print">
-							<i
-								class="fa fa-chevron-circle-down dropdown-toggle dropdown-toggle-split"
-								id="icon-table-dd" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false" aria-hidden="true"></i>
-							<div class="dropdown-menu dd-menu">
-								<c:if test="${usuarioLogado.usuario.tipo=='ADMIN'}">
-									<a class="dropdown-item dd-item"
-										href="<c:url value='/usuarios/${usuario.id}'/>"><i
-										class="fas fa-pencil-alt"></i> Editar</a>
-									<c:if test="${usuarioLogado.usuario.id != usuario.id}">
-										<a class="dropdown-item dd-item deletarProduto"
-											href="javascript:void(0);"
-											data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>"><i
-											class="fa fa-trash icon-dd" aria-hidden="true"></i> Deletar</a>
-									</c:if>
-								</c:if>
-								<a class="dropdown-item dd-item"
-									href="<c:url value='/usuarios/${usuario.id}/view'/>"><i
-									class="fa fa-user icon-dd" aria-hidden="true"></i> Visualizar</a>
-							</div>
-						</div> ${usuario.nome} ${usuario.sobrenome}
-					</td>
-					<%-- 						<td id="nome">${usuario.nome} ${usuario.sobrenome}</td> --%>
+					<td class="col-3" id="nome"> ${usuario.nome} ${usuario.sobrenome}</td>
 					<td class="col-3" id="email">${usuario.email}</td>
 					<td class="col-1" id="login">${usuario.login}</td>
 					<td class="col-1" id="tipo">${usuario.tipo}</td>
-
-					<c:if test="${usuarioLogado.usuario.tipo=='ADMIN'}">
-						<td class="col-2" colspan="2">${usuario.senha}</td>
-						<td class="col-2 tdedita"><a
-							href="<c:url value='/usuarios/${usuario.id}'/>"
-							data-toggle="tooltip" data-placement="bottom" title="Editar item">
-								<i class="fas fa-edit"></i>
-						</a> <a href="javascript:;" class="deletarProduto"
-							data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>"
-							data-toggle="tooltip" data-placement="bottom"
-							title="Deletar item"> <span class="glyphicon glyphicon-trash"
-								aria-hidden="true" id="icon-del"></span>
-						</a></td>
-					</c:if>
+					<td class="col-2" colspan="2">${usuario.senha}</td>
+					<td class="col-2 tdedita">
+						<a href="<c:url value='/usuarios/${usuario.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Editar item"> <i class="fas fa-edit"></i></a>
+						<c:if test="${usuarioLogado.usuario.id != usuario.id}">
+							<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>"><i class="fa fa-trash icon-dd" aria-hidden="true"></i></a>
+						</c:if>
+						<a href="<c:url value='/usuarios/${usuario.id}/view'/>"><i class="fa fa-user icon-dd" aria-hidden="true"></i></a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
 </div>
 
 <c:if test="${usuarioalterado_msg != null}">
