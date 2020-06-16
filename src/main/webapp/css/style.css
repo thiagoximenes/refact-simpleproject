@@ -1,16 +1,14 @@
 @CHARSET "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 html, body, p, a, table, ul, li, label, div, h1, h2, h3, h4 {
-	
+	font-family: Open Sans!important;
 }
 
 .bg-login {
 	background-color: #f9fbfd;
 	background-size: cover; /*Css padrão*/
-	-webkit-background-size: cover; /*Css safari e chrome*/
 	-moz-background-size: cover; /*Css firefox*/
-	-ms-background-size: cover; /*Css IE não use mer#^@%#*/
-	-o-background-size: cover; /*Css Opera*/
 }
 
 .bg-dark {
@@ -49,7 +47,7 @@ a:hover, a:focus {
 
 table {
 /* 	border-collapse: collapse; */
-	color: #646464 !important;
+	color: #4a4a4a !important;
 }
 
 .form-signin{

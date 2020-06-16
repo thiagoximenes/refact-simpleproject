@@ -57,10 +57,10 @@
 			<tr class="d-flex">
 				<th class="col-3" scope="col">Name <i class="fas fa-sort"></i></th>
 				<th class="col-3" scope="col">Email <i class="fas fa-sort"></i></th>
-				<th class="col-1" scope="col">Login <i class="fas fa-sort"></i></th>
+				<th class="col-2" scope="col">Login <i class="fas fa-sort"></i></th>
 				<th class="col-1" scope="col">Type <i class="fas fa-sort"></i></th>
 				<th class="col-2" scope="col">Password <i class="fas fa-sort"></i></th>
-				<th class="col-2" scope="col">Actions <i class="fas fa-sort"></i></th>
+				<th class="col-1" scope="col">Actions <i class="fas fa-sort"></i></th>
 			</tr>
 		</thead>
 		<tbody class="usuario-body">
@@ -68,10 +68,10 @@
 				<tr class="d-flex tr-item">
 					<td class="col-3" id="nome"> ${usuario.nome} ${usuario.sobrenome}</td>
 					<td class="col-3" id="email">${usuario.email}</td>
-					<td class="col-1" id="login">${usuario.login}</td>
+					<td class="col-2" id="login">${usuario.login}</td>
 					<td class="col-1" id="tipo">${usuario.tipo}</td>
 					<td class="col-2" colspan="2">${usuario.senha}</td>
-					<td class="col-2 tdedita">
+					<td class="col-1 tdedita">
 						<a href="<c:url value='/usuarios/${usuario.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Editar item"> <i class="fas fa-edit"></i></a>
 						<c:if test="${usuarioLogado.usuario.id != usuario.id}">
 							<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>"><i class="fa fa-trash icon-dd" aria-hidden="true"></i></a>
