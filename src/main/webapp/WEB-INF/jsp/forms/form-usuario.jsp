@@ -24,16 +24,24 @@
 		<input type="text" name="usuario.login" id="login" class="form-control" value="${usuario.login}" placeholder="Escolha um login válido." required />
 	</div>
 	
-	<div class="form-group col-sm">
-		<label for="senha">Senha:</label>
-		<input type="password" name="usuario.senha" id="senha" placeholder="Escolha uma senha." class="form-control" required />
-	</div>
-	
-	<c:if test="${usuarioLogado.usuario.tipo == 'NORMAL'}">
-		<input type="hidden" name="usuario.tipo" id="tipo" value="NORMAL" />
+	<c:if test="${empty usuario.senha}">
+		<div class="form-group col-sm">
+			<label for="senha">Senha:</label>
+			<input type="password" name="usuario.senha" id="senha" placeholder="Escolha uma senha." class="form-control" required />
+		</div>
+	</c:if>
+	<c:if test="${not empty usuario.senha}">
+		<input type="hidden" name="usuario.senha" value="${usuario.senha}" />
+
+		<div class="form-group col-sm">
+			<div>
+				Senha: ******** (<a href="" data-toggle="modal"
+					data-target="#myModal">alterar senha</a>)
+			</div>
+		</div>
 	</c:if>
 	
-	<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN'}">
+<%-- 	<c:if test="${empty cusuario.tipo}"> --%>
 		<div class="form-group col-sm">
 			<label for="tipo">Tipo de Usuário:</label>
 			<select class="form-control" name="usuario.tipo" id="tipo" required>
@@ -48,7 +56,8 @@
 				</c:forEach>
 			</select>
 		</div>
-	</c:if>
+<%-- 	</c:if> --%>
+	
 </div>
 
 

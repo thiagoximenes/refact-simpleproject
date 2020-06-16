@@ -48,7 +48,7 @@ a:hover, a:focus {
 }
 
 table {
-	border-collapse: collapse;
+/* 	border-collapse: collapse; */
 	color: #646464 !important;
 }
 

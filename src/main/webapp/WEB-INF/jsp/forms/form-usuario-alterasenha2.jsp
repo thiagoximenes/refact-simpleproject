@@ -47,16 +47,17 @@
 		</div>
 	</div>
 
-	<input type="hidden" name="usuario.nome" value="${usuario.nome}" /> <input
-		type="hidden" name="usuario.sobrenome" value="${usuario.sobrenome}" />
+	<input type="hidden" name="usuario.nome" value="${usuario.nome}" /> 
+	<input type="hidden" name="usuario.sobrenome" value="${usuario.sobrenome}" />
 	<input type="hidden" name="usuario.email" value="${usuario.email}" />
 	<input type="hidden" name="usuario.login" value="${usuario.login}" />
 	<input type="hidden" name="usuario.tipo" value="${usuario.tipo}" />
 
 	<div class="row">
 		<div class="col-sm-12">
-			<button id="alterar-senha-btn" class="btn btn-red" type="submit"
-				name="_method" value="PUT">Alterar senha</button>
+			<button id="alterar-senha-btn" class="btn btn-success" type="submit" name="_method" value="PUT">
+				Change password
+			</button>
 		</div>
 	</div>
 </form>

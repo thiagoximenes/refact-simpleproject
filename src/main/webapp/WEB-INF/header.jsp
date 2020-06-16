@@ -30,12 +30,10 @@
 	rel="stylesheet">
 
 <!-- CSS Import -->
-<link href="<c:url value="/css/plugins/bootstrap/bootstrap.min.css"/>"
-	rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/plugins/bootstrap/bootstrap.min.css"/>" rel="stylesheet" type="text/css" />
 <%-- <link href="<c:url value="/css/plugins/bootstrap/bootstrap-theme.css"/>" rel="stylesheet" type="text/css" /> --%>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
-<link href="<c:url value="/css/plugins/sweetalert/sweetalert.css"/>"
-	rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/plugins/sweetalert/sweetalert.css"/>" rel="stylesheet" type="text/css" />
 
 <link href="<c:url value="/css/style.css"/>" rel="stylesheet"
 	type="text/css" />
