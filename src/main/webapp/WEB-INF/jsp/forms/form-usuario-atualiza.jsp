@@ -20,7 +20,7 @@
 					title="Campo obrigatório">*</p>
 				<input type="text" name="usuario.sobrenome" id="sobrenome"
 					class="form-control" value="${usuario.sobrenome}"
-					placeholder="Seu último nome." />
+					placeholder="Seu último nome." required />
 			</div>
 			<div class="col-sm-4">
 				<label for="email">Email:</label>
@@ -43,13 +43,28 @@
 					placeholder="Escolha um login válido." required />
 			</div>
 
-			<div class="col-sm-4">
-				<label for="senha">Senha:</label>
-				<p class="obrigatorio" data-toggle="tooltip" data-placement="right"
-					title="Campo obrigatório">*</p>
-				<input type="password" name="usuario.senha" id="senha"
-					placeholder="Escolha uma senha." class="form-control" required />
-			</div>
+			<!-- 	CAMPO SENHA PARA O EDIT -->
+			<c:if test="${not empty usuario.senha}">
+				<input type="hidden" name="usuario.senha" value="${usuario.senha}" />
+
+				<div class="col-sm-4" style="line-height: 64px;">
+					<div>
+						Senha: ******** (<a href="" data-toggle="modal"
+							data-target="#myModal">alterar senha</a>)
+					</div>
+				</div>
+			</c:if>
+			<!-- 	FIM CMP EDIT -->
+
+			<c:if test="${empty usuario.senha}">
+				<div class="col-sm-4">
+					<label for="senha">Senha:</label>
+					<p class="obrigatorio" data-toggle="tooltip" data-placement="right"
+						title="Campo obrigatório">*</p>
+					<input type="password" name="usuario.senha" id="senha"
+						placeholder="Escolha uma senha." class="form-control" required />
+				</div>
+			</c:if>
 
 			<c:if test="${usuarioLogado.usuario.tipo == 'NORMAL'}">
 				<input type="hidden" name="usuario.tipo" id="tipo" value="NORMAL" />

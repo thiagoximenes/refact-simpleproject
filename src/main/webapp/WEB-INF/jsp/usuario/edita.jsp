@@ -7,7 +7,7 @@
 	<h4 class="titulo1">Atualização - Usuários</h4>
 	<form class="form-style form-basic"
 		action="<c:url value="/usuarios/${usuario.id}"/>" method="POST">
-		<c:import url="../forms/form-usuario.jsp"></c:import>
+		<c:import url="../forms/form-usuario-atualiza.jsp"></c:import>
 		<div class="row crow">
 			<button class="btn btn-red" type="submit" name="_method" value="PUT">Alterar</button>
 			<a type="button" class="btn btn-dark"
