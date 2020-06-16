@@ -2,7 +2,7 @@
 
 <div class="header-body pt-3 pb-3">
 	<div class="row align-items-end">
-		<div class="col">
+		<div class="col-12">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a
@@ -10,6 +10,8 @@
 					<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
 				</ol>
 			</nav>
+		</div>
+		<div class="col">
 			<h4>Index</h4>
 		</div>
 	</div>

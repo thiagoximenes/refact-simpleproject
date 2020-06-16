@@ -3,6 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../header.jsp"%>
 
+<!-- WAIT FRONT-END REFACTS -->
+
 <div class="grupo">
 	<h4 class="titulo1">Visualização de usuários</h4>
 	<div class="row crow">
