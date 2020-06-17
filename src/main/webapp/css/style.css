@@ -5,49 +5,13 @@ html, body, p, a, table, ul, li, label, div, h1, h2, h3, h4 {
 	font-family: Open Sans!important;
 }
 
-.bg-login {
-	background-color: #f9fbfd;
-	background-size: cover; /*Css padrão*/
-	-moz-background-size: cover; /*Css firefox*/
-}
-
-.bg-dark {
-	background-color: #1a2b3c !important;
-}
-
-.dropdown-toggle::after {
-	content: none;
-}
-
-/* temporary */
-div.btn-group, li.dropdown {
-	cursor: pointer;
-}
-
 table tr td, table tr th {
 	word-wrap: break-word;
 }
 
-.breadcrumb {
-	background-color: transparent !important;
-	text-transform: uppercase !important;
-	font-size: 0.7rem;
-}
-
-a {
-	color: #c1c1c1;
-	transition: 0.1s;
-}
-
-a:hover, a:focus {
-	text-decoration: none;
-	color: #901db9;
-	transition: 0.1s;
-}
-
-table {
-/* 	border-collapse: collapse; */
-	color: #4a4a4a !important;
+/* temporary */
+table thead tr th {
+	cursor: pointer;
 }
 
 .form-signin{
@@ -56,3 +20,39 @@ table {
 	padding: 15px;
 	margin: 0 auto;
 }
+
+/* .bg-login { */
+/* 	background-color: #f9fbfd; */
+/* 	background-size: cover; Css padrão */
+/* 	-moz-background-size: cover; Css firefox */
+/* } */
+
+/* .bg-dark { */
+/* 	background-color: #1a2b3c !important; */
+/* } */
+
+/* .dropdown-toggle::after { */
+/* 	content: none; */
+/* } */
+
+/* .breadcrumb { */
+/* 	background-color: transparent !important; */
+/* 	text-transform: uppercase !important; */
+/* 	font-size: 0.7rem; */
+/* } */
+
+/* a { */
+/* 	color: #c1c1c1; */
+/* 	transition: 0.1s; */
+/* } */
+
+/* a:hover, a:focus { */
+/* 	text-decoration: none; */
+/* 	color: #901db9; */
+/* 	transition: 0.1s; */
+/* } */
+
+/* table { */
+/* 	border-collapse: collapse; */
+/* 	color: #4a4a4a !important; */
+/* } */

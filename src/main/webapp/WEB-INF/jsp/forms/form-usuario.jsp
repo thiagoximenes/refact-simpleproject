@@ -5,11 +5,11 @@
 
 <div class="row">
 	<div class="form-group col-sm">
-		<label for="nome">Nome:</label>
+		<label for="nome">First name:</label>
 		<input type="text" name="usuario.nome" id="nome" class="form-control" value="${usuario.nome}" placeholder="Seu primeiro nome." required autofocus />
 	</div>
 	<div class="form-group col-sm">
-		<label for="sobrenome">Sobrenome:</label>
+		<label for="sobrenome">Last name:</label>
 		<input type="text" name="usuario.sobrenome" id="sobrenome" class="form-control" value="${usuario.sobrenome}" placeholder="Seu último nome." />
 	</div>
 	<div class="form-group col-sm">
@@ -20,13 +20,13 @@
 
 <div class="row">
 	<div class="form-group col-sm">
-		<label for="login">Login:</label>
+		<label for="login">Username:</label>
 		<input type="text" name="usuario.login" id="login" class="form-control" value="${usuario.login}" placeholder="Escolha um login válido." required />
 	</div>
 	
 	<c:if test="${empty usuario.senha}">
 		<div class="form-group col-sm">
-			<label for="senha">Senha:</label>
+			<label for="senha">Password:</label>
 			<input type="password" name="usuario.senha" id="senha" placeholder="Escolha uma senha." class="form-control" required />
 		</div>
 	</c:if>
@@ -35,17 +35,18 @@
 
 		<div class="form-group col-sm">
 			<div>
-				Senha: ******** (<a href="" data-toggle="modal"
-					data-target="#myModal">alterar senha</a>)
+				Password: ******** (<a href="" data-toggle="modal" data-target="#myModal">change</a>)
 			</div>
 		</div>
 	</c:if>
 	
 <%-- 	<c:if test="${empty cusuario.tipo}"> --%>
 		<div class="form-group col-sm">
-			<label for="tipo">Tipo de Usuário:</label>
+			<label for="tipo">User type:</label>
 			<select class="form-control" name="usuario.tipo" id="tipo" required>
-				<option>Selecione um tipo de usuário</option>
+				<c:if test="${usuario.tipo == null}">
+				<option>Select a type</option>
+				</c:if>
 				<c:forEach var="tip" items="${tipoUsuario}">
 					<c:if test="${tip.tipoUsuario == usuario.tipo}">
 						<option value="${tip.tipoUsuario}" selected="selected">${tip.tipoUsuario}</option>

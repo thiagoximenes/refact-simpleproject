@@ -35,31 +35,22 @@
 						<div class="media-body">
 							<input type="hidden" id="bs-senha" class="invis"
 								value="${usuarioLogado.usuario.senha}" />
-							<h4 class="my-1">${usuarioLogado.usuario.nome}
-								${usuarioLogado.usuario.sobrenome}</h4>
+							<h4 class="my-1">${usuarioLogado.usuario.nome} ${usuarioLogado.usuario.sobrenome}</h4>
 							<p class="font-13 text-muted">${usuarioLogado.usuario.email}</p>
 							<p class="font-13">
 								<c:if test="${usuarioLogado.usuario.tipo=='ADMIN'}">
-	                        		Full access <span class="badge badge-warning">Admin
-										Master</span>
+	                        		Full access <span class="badge badge-warning">Admin Master</span>
 								</c:if>
 								<c:if test="${usuarioLogado.usuario.tipo=='NORMAL'}">
-	                        		Limited access <span
-										class="badge badge-secondary">User</span>
+	                        		Limited access <span class="badge badge-secondary">User</span>
 								</c:if>
 							</p>
 							<p class="font-13">
-								Login: ${usuarioLogado.usuario.login} | Password: ********** (<a
-									href="" data-toggle="modal" data-target="#myModal">change</a>)
+								Login: ${usuarioLogado.usuario.login} | Password: ********** (<a href="" data-toggle="modal" data-target="#myModal">change</a>)
 							</p>
-							<%-- 	                        <c:if test="${usuarioLogado.usuario.tipo=='ADMIN' && usuarioLogado.usuario.id != usuario.id}"> --%>
-							<%-- 								<p><a style="color: #ff7582!important;" href="javascript:;" class="deletarProduto" data-href="<c:url value='/usuario/remove?usuario.id=${usuarioLogado.usuario.id}'/>" data-toggle="tooltip" data-placement="right" title="Deletar item"><i style="color: #ff7582 !important; font-size: 14px;" class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete user</a></p> --%>
-							<%-- 							</c:if> --%>
 						</div>
-						<!-- end media-body-->
 					</div>
 				</div>
-				<!-- end col-->
 
 				<div class="col-sm-4">
 					<div class="text-center mt-sm-0 mt-3 text-sm-right">
@@ -69,11 +60,8 @@
 						</a>
 					</div>
 				</div>
-				<!-- end col-->
 			</div>
-			<!-- end row -->
 		</div>
-		<!-- end card-body/ profile-user-box-->
 	</div>
 </div>
 

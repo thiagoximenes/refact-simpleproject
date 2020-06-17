@@ -16,8 +16,12 @@
 				</ol>
 			</nav>
 		</div>
+		
 		<div class="col">
 			<h4>New user</h4>
+		</div>
+		
+		<div class="col-auto" style="min-height: 2.5rem;">
 		</div>
 	</div>
 </div>
