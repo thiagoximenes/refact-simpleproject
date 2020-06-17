@@ -41,11 +41,18 @@
 	type="text/css" />
 <%-- <link href="<c:url value="/css/bootstrap-datepicker.css"/>" rel="stylesheet" type="text/css"> --%>
 
-
 </head>
 <body class="bg-login">
 
 	<template:menu />
+
+	<div class="text-center loader">
+		<div class="spinner-border" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+
+
 
 	<div id="content">
 		<div class="container-fluid">

@@ -21,6 +21,16 @@ table thead tr th {
 	margin: 0 auto;
 }
 
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: rgba(255, 255, 255, 0.82);
+}
+
 /* .bg-login { */
 /* 	background-color: #f9fbfd; */
 /* 	background-size: cover; Css padrão */
