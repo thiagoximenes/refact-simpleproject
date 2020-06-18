@@ -19,15 +19,8 @@
 <%-- <link rel="shortcut icon" href="<c:url value="/img/icon/favicon.ico"/>" type="image/x-icon"> --%>
 <%-- <link rel="icon" href="<c:url value="/img/icon/favicon.ico"/>" type="image/x-icon"> --%>
 
-<!-- Fontes Google -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400,600" rel="stylesheet"> -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> -->
-
 <!-- Font Awesome -->
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-	rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
 
 <!-- CSS Import -->
 <%-- <link href="<c:url value="/css/plugins/bootstrap/bootstrap.min.css"/>" rel="stylesheet" type="text/css" /> --%>
@@ -35,10 +28,15 @@
 
 <%-- <link href="<c:url value="/css/plugins/bootstrap/bootstrap-theme.css"/>" rel="stylesheet" type="text/css" /> --%>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
-<link href="<c:url value="/css/plugins/sweetalert/sweetalert.css"/>" rel="stylesheet" type="text/css" />
+<%-- <link href="<c:url value="/css/plugins/sweetalert/sweetalert.css"/>" rel="stylesheet" type="text/css" /> --%>
+<!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<!-- <script src="sweetalert2.all.min.js"></script> -->
 
-<link href="<c:url value="/css/style.css"/>" rel="stylesheet"
-	type="text/css" />
+<link href="<c:url value="/css/general.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/forms.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/tables.css"/>" rel="stylesheet" type="text/css" />
+	
 <%-- <link href="<c:url value="/css/bootstrap-datepicker.css"/>" rel="stylesheet" type="text/css"> --%>
 
 </head>

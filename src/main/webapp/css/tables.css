@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+table tr td, table tr th {
+	word-wrap: break-word;
+}
+
+table thead tr th {
+	cursor: pointer;
+}
+
+table i {
+	color: #5b819f;
+	transition: 0.1s;
+}
+
+table i:focus, table i:hover {
+	color: #7ea1c8;
+	transition: 0.1s;
+}

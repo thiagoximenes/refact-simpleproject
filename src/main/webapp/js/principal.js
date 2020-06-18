@@ -1,34 +1,37 @@
 //$(document).ready(function(){
 //});
 
-$(".deletarProduto").click(function(){
-		 
-	 var oi = $(this).data("href");
-	 swal({
-		  title: "Tem certeza?",
-		  text: "Vai ser apagado da base de dados!",
-		  type: "warning",
-		  showCancelButton: true,
-		  confirmButtonColor: "#DD6B55",
-		  confirmButtonText: "Sim, deletar!",
-		  cancelButtonText: "Nao, cancelar.",
-		  closeOnConfirm: false,
-		  closeOnCancel: false
-	 },
-	 function(isConfirm){
-		 if (isConfirm) {
-			 window.location = oi;
-		 }else {
-			 swal({
-				title: "Cancelado",
-				text: "A operação foi cancelada!", 
-				type:"error",
-				timer: 800,
-				showConfirmButton: false
-			 });
-		 }
-	 });
-});
+//$(".deletarProduto").click(function(){
+//		 
+//	 var oi = $(this).data("href");
+//	 swal({
+//		  title: "Tem certeza?",
+//		  text: "Vai ser apagado da base de dados!",
+//		  type: "warning",
+//		  showCancelButton: true,
+//		  confirmButtonColor: "#DD6B55",
+//		  confirmButtonText: "Sim, deletar!",
+//		  cancelButtonText: "Nao, cancelar.",
+//		  closeOnConfirm: false,
+//		  closeOnCancel: false
+//	 },
+//	 function(isConfirm){
+//		 if (isConfirm) {
+//			 window.location = oi;
+//		 }else {
+//			 swal({
+//				title: "Cancelado",
+//				text: "A operação foi cancelada!", 
+//				type:"error",
+//				timer: 800,
+//				showConfirmButton: false
+//			 });
+//		 }
+//	 });
+//});
+
+
+
 
 
 
