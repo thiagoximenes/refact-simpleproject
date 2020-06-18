@@ -27,7 +27,7 @@
 		<div class="col">
 			<form class="form-style form-basic" action="<c:url value="/usuarios/${usuario.id}"/>" method="post">
 				<c:import url="../forms/form-usuario.jsp"></c:import>
-				<button class="btn btn-success" type="submit" name="_method" value="PUT">Change</button>
+				<button class="btn btn-primary" type="submit" name="_method" value="PUT">Change</button>
 				<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].lista()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
 					<i class="fa fa-arrow-left" aria-hidden="true"></i>
 				</a>

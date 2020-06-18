@@ -22,7 +22,7 @@
 		</div>
 		
 		<div class="col-auto">
-			<a class="btn btn-success"
+			<a class="btn btn-light"
 				href="${linkTo[UsuarioController].novo()}"> <i
 				class="fas fa-plus"></i> Novo Usuário
 			</a>
@@ -79,11 +79,11 @@
 					<td class="" id="tipo">${usuario.tipo}</td>
 					<td class="" id="senha">${usuario.senha}</td>
 					<td class="tdedita">
-						<a href="<c:url value='/usuarios/${usuario.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Editar item"> <i class="fas fa-edit"></i></a>
+						<a href="<c:url value='/usuarios/${usuario.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Editar item"> <i class="far fa-edit"></i></a>
 						<c:if test="${usuarioLogado.usuario.id != usuario.id}">
-							<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>"><i class="fa fa-trash icon-dd" aria-hidden="true"></i></a>
+							<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>"><i class="far fa-trash-alt"></i></a>
 						</c:if>
-						<a href="<c:url value='/usuarios/${usuario.id}/view'/>"><i class="fa fa-user icon-dd" aria-hidden="true"></i></a>
+						<a href="<c:url value='/usuarios/${usuario.id}/view'/>"><i class="far fa-eye"></i></a>
 					</td>
 				</tr>
 			</c:forEach>

@@ -58,7 +58,7 @@
 
 	<div class="row">
 		<div class="col-sm-12">
-			<button id="alterar-senha-btn" class="btn btn-success" type="submit" name="_method" value="PUT">
+			<button id="alterar-senha-btn" class="btn btn-primary" type="submit" name="_method" value="PUT">
 				Change password
 			</button>
 		</div>

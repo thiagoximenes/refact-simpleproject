@@ -31,7 +31,7 @@
 		<div class="col">
 			<form class="form-style form-basic" action="${linkTo[UsuarioController].adiciona(null)}" method="post">
 				<c:import url="../forms/form-usuario.jsp"></c:import>
-				<input type="submit" class="btn btn-success" value="Register" />
+				<input type="submit" class="btn btn-primary" value="Register" />
 				<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].lista()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
 					<i class="fa fa-arrow-left" aria-hidden="true"></i>
 				</a>
