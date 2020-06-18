@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
 table tr td, table tr th {
-	word-wrap: break-word;
+	vertical-align: inherit!important;
+/* 	word-wrap: break-word; */
+	white-space: nowrap;
 }
+
 
 table thead tr th {
 	cursor: pointer;

@@ -1,6 +1,6 @@
 //SORTED BY HEADER
 $(document).ready(function(){ 
-	$("#tabela").tablesorter();
+	$(".table").tablesorter();
 });
 
 //FILTER

@@ -3,39 +3,39 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../header.jsp"%>
 
-<div class="header-body pt-3 pb-3">
-	<div class="row align-items-end">
-		<div class="col-12">
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a
-						href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
-					<li class="breadcrumb-item" aria-current="page"><a
-						href="${linkTo[UsuarioController].lista() }">Users</a></li>
-					<li class="breadcrumb-item active" aria-current="page">New</li>
-				</ol>
-			</nav>
-		</div>
-		
-		<div class="col">
-			<h4>New user</h4>
-		</div>
-		
-		<div class="col-auto" style="min-height: 2.5rem;">
+<div class="container-fluid">
+	<div class="header">
+		<div class="row align-items-end mb-3">
+			<div class="col">
+				<h6>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a
+								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a
+								href="${linkTo[UsuarioController].lista() }">Users</a></li>
+							<li class="breadcrumb-item active" aria-current="page">New</li>
+						</ol>
+					</nav>
+				</h6>
+				<h4>New user records</h4>
+			</div>
 		</div>
 	</div>
 </div>
 
-<div class="content">
-	<div class="row align-items-end">
-		<div class="col">
-			<form class="form-style form-basic" action="${linkTo[UsuarioController].adiciona(null)}" method="post">
-				<c:import url="../forms/form-usuario.jsp"></c:import>
-				<input type="submit" class="btn btn-primary" value="Register" />
-				<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].lista()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
-					<i class="fa fa-arrow-left" aria-hidden="true"></i>
-				</a>
-			</form>
+<div class="container-fluid">
+	<div class="content">
+		<div class="row align-items-end">
+			<div class="col">
+				<form class="form-style form-basic" action="${linkTo[UsuarioController].adiciona(null)}" method="post">
+					<c:import url="../forms/form-usuario.jsp"></c:import>
+					<input type="submit" class="btn btn-primary" value="Register" />
+					<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].lista()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
+						<i class="fa fa-arrow-left" aria-hidden="true"></i>
+					</a>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
