@@ -34,8 +34,9 @@
 <!-- <script src="sweetalert2.all.min.js"></script> -->
 
 <link href="<c:url value="/css/general.css"/>" rel="stylesheet" type="text/css" />
-<link href="<c:url value="/css/forms.css"/>" rel="stylesheet" type="text/css" />
-<link href="<c:url value="/css/tables.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/form.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/table.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/plugins/iann-hover/hover-min.css"/>" rel="stylesheet" type="text/css" />
 	
 <%-- <link href="<c:url value="/css/bootstrap-datepicker.css"/>" rel="stylesheet" type="text/css"> --%>
 
@@ -49,8 +50,6 @@
 			<span class="sr-only">Loading...</span>
 		</div>
 	</div>
-
-
 
 	<div id="content">
 <!-- 		<div class="container-fluid"> -->

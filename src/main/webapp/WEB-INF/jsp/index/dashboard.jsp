@@ -23,7 +23,7 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col">
-				<p>This .JSP are visible only for <b>logged users</b>.</p>
+				<p>This .JSP are visible only for <b>logged users</b>, like you.</p>
 				<header>
 					<h2>Header</h2>
 					<p>Lorem ipsum is placeholder text commonly used in the graphic,
