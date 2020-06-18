@@ -30,10 +30,12 @@
 	</div>
 	<div class="row align-items-end">
 		<div class="col buscar">
-			<label class="label-filtro-tabela" for="filtrar-tabela-usuarios">
-				<i class="fa fa-search" aria-hidden="true"></i>
-			</label>
-			<input class="form-control filtro-tabela filtrar-tabela" type="text" name="filtro-usuarios" id="filtrar-tabela-usuarios" placeholder="Pesquisar" />
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-search" aria-hidden="true"></i></span>
+				</div>
+				<input type="text" class="form-control filterable" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+			</div>
 		</div>
 	</div>
 </div>
@@ -68,16 +70,16 @@
 			<c:forEach items="${usuarios}" var="usuario">
 				<tr class="tr-item">
 					<th scope="row"> ${usuario.id}</td>
-					<td class="" id="nome"> ${usuario.nome} ${usuario.sobrenome} 
+					<td id="nome"> ${usuario.nome} ${usuario.sobrenome} 
 						<c:if test="${usuarioLogado.usuario.id == usuario.id}">
 							<span class="badge badge-warning">Active</span>
 						</c:if>
 					
 					</td>
-					<td class="" id="email">${usuario.email}</td>
-					<td class="" id="login">${usuario.login}</td>
-					<td class="" id="tipo">${usuario.tipo}</td>
-					<td class="" id="senha">${usuario.senha}</td>
+					<td id="email">${usuario.email}</td>
+					<td id="login">${usuario.login}</td>
+					<td id="tipo">${usuario.tipo}</td>
+					<td id="senha">${usuario.senha}</td>
 					<td class="tdedita">
 						<a href="<c:url value='/usuarios/${usuario.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Editar item"> <i class="far fa-edit"></i></a>
 						<c:if test="${usuarioLogado.usuario.id != usuario.id}">
