@@ -1,4 +1,4 @@
-<%@taglib tagdir="/WEB-INF/tags" prefix="toast"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="toast"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../header.jsp"%>
@@ -56,7 +56,7 @@
 	
 					<div class="col-sm-4">
 						<div class="text-center mt-sm-0 mt-3 text-sm-right">
-							<a href="<c:url value='/usuarios/perfilupdate'/>" class="btn btn-light"> <i class="mdi mdi-account-edit mr-1"></i>
+							<a href="<c:url value='/usuarios/perfilupdate'/>" class="btn btn-light"> <i class="far fa-edit"></i>
 								Edit Profile
 							</a>
 						</div>

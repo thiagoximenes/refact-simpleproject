@@ -18,6 +18,7 @@
 					</nav>
 				</h6>
 				<h4>Welcome to dashboard!</h4>
+				<p>This .JSP are visible only for <b>logged users</b>, like you.</p>
 			</div>
 		</div>
 	</div>
@@ -26,38 +27,35 @@
 <div class="container-fluid">
 	<div class="content">
 		<div class="row align-items-end">
-			<div class="col">
-				<p>This .JSP are visible only for <b>logged users</b>, like you.</p>
-				<header>
-					<h2>Header</h2>
-					<p>Lorem ipsum is placeholder text commonly used in the graphic,
-						print, and publishing industries for previewing layouts and visual
-						mockups. Lorem ipsum is placeholder text commonly used in the
-						graphic, print, and publishing industries for previewing layouts
-						and visual mockups. Lorem ipsum is placeholder text commonly used
-						in the graphic, print, and publishing industries for previewing
-						layouts and visual mockups.</p>
-				</header>
-				<main>
-					<h2>Main</h2>
-					<p>Lorem ipsum is placeholder text commonly used in the graphic,
-						print, and publishing industries for previewing layouts and visual
-						mockups. Lorem ipsum is placeholder text commonly used in the
-						graphic, print, and publishing industries for previewing layouts
-						and visual mockups. Lorem ipsum is placeholder text commonly used
-						in the graphic, print, and publishing industries for previewing
-						layouts and visual mockups.</p>
-				</main>
-				<footer>
-					<h2>Footer</h2>
-					<p>Lorem ipsum is placeholder text commonly used in the graphic,
-						print, and publishing industries for previewing layouts and visual
-						mockups. Lorem ipsum is placeholder text commonly used in the
-						graphic, print, and publishing industries for previewing layouts
-						and visual mockups. Lorem ipsum is placeholder text commonly used
-						in the graphic, print, and publishing industries for previewing
-						layouts and visual mockups.</p>
-				</footer>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+			<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN' }">
+				<c:forEach items="${usuarios}" var="usuario">
+					<div class="col-12">
+						<div class="card mb-1">
+							<div class="card-body profile-user-box" style="padding:.40rem!important;">
+								<div class="media">
+									<span class="float-left m-2 mr-4 ">
+										<img style="height: 60px;" class="rounded-circle img-thumbnail" src="<c:url value="/img/profile.png"/>" />
+									</span>
+									<div class="media-body">
+										<input type="hidden" id="bs-senha" class="invis" value="${usuario.senha}" />
+										<span>${usuario.nome} ${usuario.sobrenome}</span></br>
+										<span>${usuario.email} / ${usuario.login}</span></br>
+										<span style="font-size: .8rem !important;">
+											<c:if test="${usuario.tipo == 'ADMIN'}">
+				                        		Full access <span class="badge badge-warning">Admin Master</span>
+											</c:if>
+											<c:if test="${usuario.tipo == 'NORMAL'}">
+				                        		Limited access <span class="badge badge-secondary">User</span>
+											</c:if>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</c:if>
 			</div>
 		</div>
 	</div>

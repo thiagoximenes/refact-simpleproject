@@ -64,7 +64,6 @@
 							<c:if test="${usuarioLogado.usuario.id == usuario.id}">
 								<span class="badge badge-success">Active</span>
 							</c:if>
-						
 						</td>
 						<td id="email">${usuario.email}</td>
 						<td id="login">${usuario.login}</td>

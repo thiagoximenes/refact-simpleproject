@@ -1,29 +1,32 @@
 package br.com.ximenes.simpleproject.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
+import br.com.ximenes.simpleproject.dao.UsuarioDao;
 import br.com.ximenes.simpleproject.model.TipoUsuario;
+import br.com.ximenes.simpleproject.model.Usuario;
 import br.com.ximenes.simpleproject.security.Protecao;
 
 @Controller
 public class IndexController {
 
-	private final Result result;
+	private Result result;
+	private Usuario usuario;
+	private UsuarioDao usuarioDao;
 
-	/**
-	 * @deprecated CDI eyes only
-	 */
-	protected IndexController() {
-		this(null);
-	}
+	protected IndexController() {}
 
 	@Inject
-	public IndexController(Result result) {
+	public IndexController(Result result, Usuario usuario, UsuarioDao usuarioDao) {
 		this.result = result;
+		this.usuario= usuario;
+		this.usuarioDao = usuarioDao;
 	}
 
 	@Path("/")
@@ -34,5 +37,8 @@ public class IndexController {
 	@Get("/dashboard")
 	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
 	public void dashboard() {
+		List<Usuario> usuarios = usuarioDao.lista();
+		result.include("tipoUsuario", TipoUsuario.values());
+		result.include("usuarios", usuarios);
 	}
 }
