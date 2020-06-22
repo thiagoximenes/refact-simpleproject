@@ -1,24 +1,13 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="alert"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:if test="${usuario.id != null}">
-<form id="alterarSenhaForm" class="form-style" action="<c:url value="/usuarios/perfilupdate"/>" method="POST">
-	<input type="hidden" name="usuario.id" value="${usuario.id}" required />
-	<input type="hidden" name="usuario.nome" value="${usuario.nome}" /> 
-	<input type="hidden" name="usuario.sobrenome" value="${usuario.sobrenome}" />
-	<input type="hidden" name="usuario.email" value="${usuario.email}" />
-	<input type="hidden" name="usuario.login" value="${usuario.login}" />
-	<input type="hidden" name="usuario.tipo" value="${usuario.tipo}" />
-</c:if>
-<c:if test="${usuario.id == null}">
-<form id="alterarSenhaForm" class="form-style" action="<c:url value="/usuarios/perfilupdate"/>" method="POST">
-	<input type="hidden" name="usuario.id" value="${usuarioLogado.usuario.id}" required />
-	<input type="hidden" name="usuario.nome" value="${usuarioLogado.usuario.nome}" /> 
-	<input type="hidden" name="usuario.sobrenome" value="${usuarioLogado.usuario.sobrenome}" />
-	<input type="hidden" name="usuario.email" value="${usuarioLogado.usuario.email}" />
-	<input type="hidden" name="usuario.login" value="${usuarioLogado.usuario.login}" />
-	<input type="hidden" name="usuario.tipo" value="${usuarioLogado.usuario.tipo}" />
-</c:if>
+	<form id="alterarSenhaForm" class="form-style" action="<c:url value="/usuarios/perfilupdate"/>" method="POST">
+		<input type="hidden" name="usuario.id" value="${usuarioLogado.usuario.id}" required />
+		<input type="hidden" name="usuario.nome" value="${usuarioLogado.usuario.nome}" /> 
+		<input type="hidden" name="usuario.sobrenome" value="${usuarioLogado.usuario.sobrenome}" />
+		<input type="hidden" name="usuario.email" value="${usuarioLogado.usuario.email}" />
+		<input type="hidden" name="usuario.login" value="${usuarioLogado.usuario.login}" />
+		<input type="hidden" name="usuario.tipo" value="${usuarioLogado.usuario.tipo}" />
 
 	<div class="row">
 		<div class="col-sm-12">

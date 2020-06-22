@@ -52,7 +52,7 @@ public class UsuarioController {
 		result.include("tipoUsuario", TipoUsuario.values());
 	}
 
-	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
+	@Protecao(tipo = { TipoUsuario.ADMIN })
 	@Get("/usuarios/{id}")
 	public Usuario edita(int id) {
 		result.include("tipoUsuario", TipoUsuario.values());
