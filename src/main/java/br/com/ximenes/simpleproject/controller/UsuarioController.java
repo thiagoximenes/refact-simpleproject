@@ -85,7 +85,7 @@ public class UsuarioController {
 	public void adiciona(@Valid Usuario usuario) {
 		validator.onErrorRedirectTo(this).novo();
 		usuarioDao.adiciona(usuario);
-		result.include("usuario_msg_a", "Usuário adicionado com sucesso!");
+		result.include("msg", "User successfully registered!");
 		result.redirectTo(this).lista();
 	}
 
@@ -94,7 +94,7 @@ public class UsuarioController {
 	@Remove
 	public void remove(Usuario usuario) {
 		usuarioDao.remove(usuario);
-		result.include("usuario_msg_r", "Usuário removido com sucesso!");
+		result.include("msg", "User successfully removed!");
 		result.redirectTo(this).lista();
 	}
 
@@ -104,7 +104,7 @@ public class UsuarioController {
 	public void altera(@Valid Usuario usuario) {
 		validator.onErrorRedirectTo(this).edita(usuario.getId());
 		usuarioDao.atualiza(usuario);
-		result.include("usuario_msg_e", "Usuário modificado com sucesso!");
+		result.include("msg", "User successfully modified!");
 		result.redirectTo(this).lista();
 	}
 

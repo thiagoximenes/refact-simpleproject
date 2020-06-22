@@ -1,4 +1,5 @@
-<%@taglib tagdir="/WEB-INF/tags" prefix="alert"%>
+<%-- <%@taglib tagdir="/WEB-INF/tags" prefix="alert"%> --%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="toast"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -27,7 +28,6 @@
 				</div>
 				<div class="form-group mb-3">
 					<input class="btn btn-primary btn-block mb-3" name="commit" tabindex="3" type="submit" value="Login">
-<!-- 					<p class="text-muted text-center login-out-newacc"> Don't have access? <a href="#" data-toggle="modal" data-target="#myModal">Contact us</a>.</p> -->
 					<p class="text-muted text-center login-out-newacc"> Don't have access? <a href="#" id="login-contact-us">Contact us</a>.</p>
 				</div>
 			</form>
@@ -60,11 +60,10 @@
 	</div>
 </div>
 
-<c:forEach var="erro" items="${errors}">
-	<alert:validationMessage name="login_invalido" />
-</c:forEach>
+<%-- <c:forEach var="erro" items="${errors}"> --%>
+<%-- 	<alert:validationMessage name="login_invalido" /> --%>
+<%-- </c:forEach> --%>
 
-<!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
@@ -85,6 +84,7 @@
 		</div>
 	</div>
 </div>
-<!-- Endof Modal -->
+
+<toast:notificationAlert />
 
 <%@ include file="../../footer.jsp"%>

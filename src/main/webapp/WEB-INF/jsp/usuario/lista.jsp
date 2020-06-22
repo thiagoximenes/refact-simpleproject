@@ -1,4 +1,4 @@
-<%@ taglib tagdir="/WEB-INF/tags" prefix="alura"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="toast"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../header.jsp"%>
@@ -84,21 +84,7 @@
 	</div>
 </div>
 
-<c:if test="${usuarioalterado_msg != null}">
-	<div id="msg-sucesso">${usuarioalterado_msg}</div>
-</c:if>
+<toast:notificationAlert />
 
-
-<!-- 		Mensagens Sucesso -->
-<c:if test="${usuario_msg_a != null}">
-	<div id="msg-sucesso">${usuario_msg_a}</div>
-</c:if>
-<c:if test="${usuario_msg_r != null}">
-	<div id="msg-sucesso">${usuario_msg_r}</div>
-</c:if>
-<c:if test="${usuario_msg_e != null}">
-	<div id="msg-sucesso">${usuario_msg_e}</div>
-</c:if>
-<!-- 		Fim Mensagem Sucesso		 -->
 <%@ include file="../../footer.jsp"%>
 

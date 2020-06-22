@@ -1,3 +1,7 @@
+<%@taglib tagdir="/WEB-INF/tags" prefix="toast"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ include file="../../header.jsp"%>
 
 <div class="container-fluid">
@@ -58,6 +62,8 @@
 		</div>
 	</div>
 </div>
+
+<toast:notificationAlert />
 
 <%@ include file="../../footer.jsp"%>
 

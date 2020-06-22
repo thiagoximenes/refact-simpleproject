@@ -46,9 +46,11 @@ public class ProtecaoInterceptor {
 			if (tipos.contains(usuarioLogado.getTipo())) {
 				stack.next();
 			} else {
+				result.include("msg", "You don't have permission to access.");
 				result.redirectTo(IndexController.class).index();
 			}
 		} else {
+			result.include("msg", "You don't have permission to access this page.");
 			result.redirectTo(LoginController.class).form();
 		}
 	}
