@@ -10,10 +10,11 @@
 				<h6>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a
-								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
-							<li class="breadcrumb-item" aria-current="page"><a
-								href="${linkTo[UsuarioController].lista() }">Users</a></li>
+							<li class="breadcrumb-item"><a href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
+							<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN' }">
+								<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[UsuarioController].lista() }">Users</a></li>
+							</c:if>
+							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[UsuarioController].perfil() }">Perfil</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Edit</li>
 						</ol>
 					</nav>
@@ -31,7 +32,7 @@
 				<form class="form-style form-basic" action="<c:url value="/usuarios/perfilupdate"/>" method="post">
 					<c:import url="../forms/form-usuario-perfil.jsp"></c:import>
 					<button class="btn btn-primary" type="submit" name="_method" value="PUT">Update</button>
-					<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].lista()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
+					<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].perfil()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
 						<i class="fa fa-arrow-left" aria-hidden="true"></i>
 					</a>
 				</form>
