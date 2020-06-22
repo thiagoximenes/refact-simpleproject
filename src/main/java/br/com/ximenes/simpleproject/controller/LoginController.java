@@ -28,7 +28,6 @@ public class LoginController {
 		this.usuarioLogado = usuarioLogado;
 		this.result = result;
 		this.validator = validator;
-
 	}
 
 	public void form() {

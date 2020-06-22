@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
+import br.com.ximenes.simpleproject.model.TipoUsuario;
 import br.com.ximenes.simpleproject.model.Usuario;
 import br.com.ximenes.simpleproject.security.UsuarioLogado;
 
@@ -48,22 +49,26 @@ public class UsuarioDao {
 	}
 
 	public void atualiza(Usuario usuario) {
-		try {
-			manager.getTransaction().begin();
-			manager.merge(usuario);
-			if(usuario.getId() == usuarioLogado.getUsuario().getId()) {
-				usuarioLogado.getUsuario().setNome(usuario.getNome());
-				usuarioLogado.getUsuario().setSobrenome(usuario.getSobrenome());
-				usuarioLogado.getUsuario().setEmail(usuario.getEmail());
-				usuarioLogado.getUsuario().setLogin(usuario.getLogin());
-				usuarioLogado.getUsuario().setSenha(usuario.getSenha());
-				usuarioLogado.getUsuario().setTipo(usuario.getTipo());
+//		if(usuario.getId() == usuarioLogado.getUsuario().getId() || usuarioLogado.getUsuario().getTipo() == TipoUsuario.ADMIN) {
+			try {
+				manager.getTransaction().begin();
+				manager.merge(usuario);
+				if(usuario.getId() == usuarioLogado.getUsuario().getId()) {
+					usuarioLogado.getUsuario().setNome(usuario.getNome());
+					usuarioLogado.getUsuario().setSobrenome(usuario.getSobrenome());
+					usuarioLogado.getUsuario().setEmail(usuario.getEmail());
+					usuarioLogado.getUsuario().setLogin(usuario.getLogin());
+					usuarioLogado.getUsuario().setSenha(usuario.getSenha());
+					usuarioLogado.getUsuario().setTipo(usuario.getTipo());
+				}
+//				System.out.println("MERGED AND UPDATED LOGGED USER");
+				manager.getTransaction().commit();
+			} catch (Exception e) {
+				manager.close();
 			}
-			System.out.println("MERGED AND UPDATED LOGGED USER");
-			manager.getTransaction().commit();
-		} catch (Exception e) {
-			manager.close();
-		}
+//		}else {
+//			System.out.println("Nao está logado, nem é ADMIN");
+//		}
 	}
 
 	public List<Usuario> lista() {

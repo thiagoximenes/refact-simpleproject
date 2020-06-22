@@ -25,12 +25,14 @@ public class UsuarioController {
 	private UsuarioDao usuarioDao;
 	private Result result;
 	private Validator validator;
+	private UsuarioLogado usuarioLogado;
 
 	@Inject
-	public UsuarioController(UsuarioDao usuarioDao, Result result, Validator validator) {
+	public UsuarioController(UsuarioDao usuarioDao, Result result, Validator validator, UsuarioLogado usuarioLogado) {
 		this.usuarioDao = usuarioDao;
 		this.result = result;
 		this.validator = validator;
+		this.usuarioLogado = usuarioLogado;
 	}
 
 	public UsuarioController() {
@@ -92,9 +94,14 @@ public class UsuarioController {
 	@Put("/usuarios/{usuario.id}")
 	public void altera(@Valid Usuario usuario) {
 		validator.onErrorRedirectTo(this).edita(usuario.getId());
-		usuarioDao.atualiza(usuario);
-		result.include("msg", "User successfully modified!");
-		result.redirectTo(this).lista();
+		if(usuario.getId() == usuarioLogado.getUsuario().getId() || usuarioLogado.getUsuario().getTipo() == TipoUsuario.ADMIN) {
+			usuarioDao.atualiza(usuario);
+			result.include("msg", "User successfully modified!");
+			result.redirectTo(this).lista();
+		}else {
+			result.include("msg", "You cannot do this!");
+			result.redirectTo(this).lista();
+		}
 	}
 
 	@Protecao(tipo = { TipoUsuario.ADMIN })
