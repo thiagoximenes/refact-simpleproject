@@ -40,10 +40,10 @@
 								<h4 class="my-1">${usuario.nome} ${usuario.sobrenome}</h4>
 								<p class="font-13 text-muted">${usuario.email}</p>
 								<p class="font-13">
-									<c:if test="${usuarioLogado.usuario.tipo=='ADMIN'}">
+									<c:if test="${usuario.tipo=='ADMIN'}">
 		                        		Full access <span class="badge badge-warning">Admin Master</span>
 									</c:if>
-									<c:if test="${usuarioLogado.usuario.tipo=='NORMAL'}">
+									<c:if test="${usuario.tipo=='NORMAL'}">
 		                        		Limited access 
 		                        		<span class="badge badge-secondary">User</span>
 									</c:if>

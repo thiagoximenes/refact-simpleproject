@@ -62,7 +62,7 @@
 						<th> ${usuario.id}</th>
 						<td id="nome"> ${usuario.nome} ${usuario.sobrenome} 
 							<c:if test="${usuarioLogado.usuario.id == usuario.id}">
-								<span class="badge badge-warning">Active</span>
+								<span class="badge badge-success">Active</span>
 							</c:if>
 						
 						</td>

@@ -17,6 +17,7 @@ import br.com.ximenes.simpleproject.dao.UsuarioDao;
 import br.com.ximenes.simpleproject.model.TipoUsuario;
 import br.com.ximenes.simpleproject.model.Usuario;
 import br.com.ximenes.simpleproject.security.Protecao;
+import br.com.ximenes.simpleproject.security.UsuarioLogado;
 
 @Controller
 public class UsuarioController {
