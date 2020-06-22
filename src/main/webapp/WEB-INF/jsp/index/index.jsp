@@ -21,8 +21,6 @@
 	</div>
 </div>
 
-${msg}
-
 <div class="container-fluid">
 	<div class="content">
 		<div class="row align-items-end">

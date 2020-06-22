@@ -36,15 +36,14 @@
 								src="<c:url value="/img/profile.png"/>" />
 							</span>
 							<div class="media-body">
-								<input type="hidden" id="bs-senha" class="invis"
-									value="${usuarioLogado.usuario.senha}" />
+								<input type="hidden" id="bs-senha" class="invis" value="${usuarioLogado.usuario.senha}" />
 								<h4 class="my-1">${usuarioLogado.usuario.nome} ${usuarioLogado.usuario.sobrenome}</h4>
 								<p class="font-13 text-muted">${usuarioLogado.usuario.email}</p>
 								<p class="font-13">
-									<c:if test="${usuarioLogado.usuario.tipo=='ADMIN'}">
+									<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN'}">
 		                        		Full access <span class="badge badge-warning">Admin Master</span>
 									</c:if>
-									<c:if test="${usuarioLogado.usuario.tipo=='NORMAL'}">
+									<c:if test="${usuarioLogado.usuario.tipo == 'NORMAL'}">
 		                        		Limited access <span class="badge badge-secondary">User</span>
 									</c:if>
 								</p>
@@ -57,8 +56,7 @@
 	
 					<div class="col-sm-4">
 						<div class="text-center mt-sm-0 mt-3 text-sm-right">
-							<a href="<c:url value='/usuarios/${usuarioLogado.usuario.id}'/>"
-								class="btn btn-light"> <i class="mdi mdi-account-edit mr-1"></i>
+							<a href="<c:url value='/usuarios/${usuarioLogado.usuario.id}'/>" class="btn btn-light"> <i class="mdi mdi-account-edit mr-1"></i>
 								Edit Profile
 							</a>
 						</div>

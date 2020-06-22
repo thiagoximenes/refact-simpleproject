@@ -40,24 +40,22 @@
 		</div>
 	</c:if>
 	
-<%-- 	<c:if test="${empty cusuario.tipo}"> --%>
-		<div class="form-group col-sm">
-			<label for="tipo">User type:</label>
-			<select class="form-control" name="usuario.tipo" id="tipo" required>
-				<c:if test="${usuario.tipo == null}">
-				<option>Select a type</option>
+	<div class="form-group col-sm">
+		<label for="tipo">User type:</label>
+		<select class="form-control" name="usuario.tipo" id="tipo" required>
+			<c:if test="${usuario.tipo == null}">
+			<option>Select a type</option>
+			</c:if>
+			<c:forEach var="tip" items="${tipoUsuario}">
+				<c:if test="${tip.tipoUsuario == usuario.tipo}">
+					<option value="${tip.tipoUsuario}" selected="selected">${tip.tipoUsuario}</option>
 				</c:if>
-				<c:forEach var="tip" items="${tipoUsuario}">
-					<c:if test="${tip.tipoUsuario == usuario.tipo}">
-						<option value="${tip.tipoUsuario}" selected="selected">${tip.tipoUsuario}</option>
-					</c:if>
-					<c:if test="${tip.tipoUsuario != usuario.tipo}">
-						<option value="${tip.tipoUsuario}">${tip.tipoUsuario}</option>
-					</c:if>
-				</c:forEach>
-			</select>
-		</div>
-<%-- 	</c:if> --%>
+				<c:if test="${tip.tipoUsuario != usuario.tipo}">
+					<option value="${tip.tipoUsuario}">${tip.tipoUsuario}</option>
+				</c:if>
+			</c:forEach>
+		</select>
+	</div>
 	
 </div>
 

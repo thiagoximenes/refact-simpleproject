@@ -60,10 +60,6 @@
 	</div>
 </div>
 
-<%-- <c:forEach var="erro" items="${errors}"> --%>
-<%-- 	<alert:validationMessage name="login_invalido" /> --%>
-<%-- </c:forEach> --%>
-
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
