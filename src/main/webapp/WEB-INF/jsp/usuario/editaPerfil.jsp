@@ -28,8 +28,8 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col">
-				<form class="form-style form-basic" action="<c:url value="/usuarios/${usuario.id}"/>" method="post">
-					<c:import url="../forms/form-usuario.jsp"></c:import>
+				<form class="form-style form-basic" action="<c:url value="/usuarios/perfilupdate"/>" method="post">
+					<c:import url="../forms/form-usuario-perfil.jsp"></c:import>
 					<button class="btn btn-primary" type="submit" name="_method" value="PUT">Update</button>
 					<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].lista()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
 						<i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -50,10 +50,12 @@
 				<h4 class="modal-title" id="myModalLabel">Update password</h4>
 			</div>
 			<div class="modal-body">
-				<c:import url="../forms/form-usuario-alterasenha.jsp"></c:import>
+				<c:import url="../forms/form-usuario-alterasenha-perfil.jsp"></c:import>
 			</div>
 		</div>
 	</div>
 </div>
+
+
 
 <%@ include file="../../footer.jsp"%>

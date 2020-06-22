@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
-import br.com.ximenes.simpleproject.model.TipoUsuario;
 import br.com.ximenes.simpleproject.model.Usuario;
 import br.com.ximenes.simpleproject.security.UsuarioLogado;
 
@@ -60,6 +59,7 @@ public class UsuarioDao {
 					usuarioLogado.getUsuario().setLogin(usuario.getLogin());
 					usuarioLogado.getUsuario().setSenha(usuario.getSenha());
 					usuarioLogado.getUsuario().setTipo(usuario.getTipo());
+					usuarioLogado.getTipo();
 				}
 //				System.out.println("MERGED AND UPDATED LOGGED USER");
 				manager.getTransaction().commit();

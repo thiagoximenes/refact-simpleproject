@@ -1,4 +1,4 @@
-<%@ taglib tagdir="/WEB-INF/tags" prefix="alura"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="toast"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../header.jsp"%>
@@ -56,7 +56,7 @@
 	
 					<div class="col-sm-4">
 						<div class="text-center mt-sm-0 mt-3 text-sm-right">
-							<a href="<c:url value='/usuarios/${usuarioLogado.usuario.id}'/>" class="btn btn-light"> <i class="mdi mdi-account-edit mr-1"></i>
+							<a href="<c:url value='/usuarios/perfilupdate'/>" class="btn btn-light"> <i class="mdi mdi-account-edit mr-1"></i>
 								Edit Profile
 							</a>
 						</div>
@@ -67,7 +67,6 @@
 	</div>
 </div>
 
-<!-- 		Change password modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
@@ -80,12 +79,13 @@
 				<h4 class="modal-title" id="myModalLabel">Change password</h4>
 			</div>
 			<div class="modal-body">
-				<c:import url="../forms/form-usuario-alterasenha.jsp"></c:import>
+				<c:import url="../forms/form-usuario-alterasenha-perfil.jsp"></c:import>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- 		End of modal -->
+
+<toast:notificationAlert />
 
 <%@ include file="../../footer.jsp"%>
 

@@ -59,6 +59,13 @@ public class UsuarioController {
 		return usuarioDao.carrega(id);
 	}
 
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL })
+	@Get("/usuarios/perfilupdate")
+	public Usuario editaPerfil(int id) {
+		result.include("tipoUsuario", TipoUsuario.values());
+		return usuarioDao.carrega(id);
+	}
+
 	@Protecao(tipo = { TipoUsuario.ADMIN })
 	@Get("/usuarios/{id}/view")
 	public Usuario view(int id) {
@@ -93,7 +100,7 @@ public class UsuarioController {
 	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL})
 	@Put("/usuarios/{usuario.id}")
 	public void altera(@Valid Usuario usuario) {
-		validator.onErrorRedirectTo(this).edita(usuario.getId());
+		validator.onErrorRedirectTo(this).editaPerfil(usuario.getId());
 		if(usuario.getId() == usuarioLogado.getUsuario().getId() || usuarioLogado.getUsuario().getTipo() == TipoUsuario.ADMIN) {
 			usuarioDao.atualiza(usuario);
 			result.include("msg", "User successfully modified!");
@@ -104,6 +111,15 @@ public class UsuarioController {
 		}
 	}
 
+	@Protecao(tipo = { TipoUsuario.ADMIN, TipoUsuario.NORMAL})
+	@Put("/usuarios/perfilupdate")
+	public void alteraPerfil(@Valid Usuario usuario) {
+		validator.onErrorRedirectTo(this).editaPerfil(usuario.getId());
+			usuarioDao.atualiza(usuario);
+			result.include("msg", "User successfully modified!");
+			result.redirectTo(this).perfil(usuario.getId());
+	}
+	
 	@Protecao(tipo = { TipoUsuario.ADMIN })
 	@Put("/usuarios/{usuario.id}/view")
 	public void view(@Valid Usuario usuario) {
