@@ -28,3 +28,23 @@ html, body, p, a, table, ul, li, label, div, h1, h2, h3, h4 {
 	background-color: transparent;
 	border-radius: .375rem;
 }
+
+.sm-card{
+	padding:.40rem!important;
+}
+
+.sm-card span:first-child{
+	font-weight: 600;
+}
+
+.sm-card img{
+	height: 50px;
+}
+
+.md-card img{
+	height: 100px;		
+}
+
+
+
+

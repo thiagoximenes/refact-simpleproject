@@ -27,19 +27,18 @@
 <div class="container-fluid">
 	<div class="content">
 		<div class="card">
-			<div class="card-body profile-user-box">
+			<div class="card-body md-card">
 				<div class="row">
 					<div class="col-sm-8">
 						<div class="media">
-							<span class="float-left m-2 mr-4"> <img
-								style="height: 100px;" class="rounded-circle img-thumbnail"
-								src="<c:url value="/img/profile.png"/>" />
+							<span class="float-left m-2 mr-4">
+								<img class="rounded-circle img-thumbnail" src="<c:url value="/img/profile.png"/>" />
 							</span>
 							<div class="media-body">
 								<input type="hidden" id="bs-senha" class="invis" value="${usuario.senha}" />
 								<h4 class="my-1">${usuario.nome} ${usuario.sobrenome}</h4>
-								<p class="font-13 text-muted">${usuario.email}</p>
-								<p class="font-13">
+								<p class="text-muted">${usuario.email}</p>
+								<p>
 									<c:if test="${usuario.tipo=='ADMIN'}">
 		                        		Full access <span class="badge badge-warning">Admin Master</span>
 									</c:if>
@@ -48,7 +47,7 @@
 		                        		<span class="badge badge-secondary">User</span>
 									</c:if>
 								</p>
-								<p class="font-13">
+								<p>
 									Login: ${usuario.login} | Password: ********** (<a href="" data-toggle="modal" data-target="#myModal">change</a>)
 								</p>
 							</div>
@@ -58,11 +57,11 @@
 					<div class="col-sm-4">
 						<div class="text-center mt-sm-0 mt-3 text-sm-right">
 							<a href="<c:url value='/usuarios/${usuario.id}'/>" class="btn btn-light">
-								Edit User
+								<i class="far fa-edit"></i> Edit User
 							</a>
 	                        <c:if test="${usuarioLogado.usuario.id != usuario.id}">
 								<a href="javascript:;" class="btn btn-light deletarProduto" data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>">
-									Delete User
+									<i class="far fa-trash-alt"></i> Delete User
 								</a>
 							</c:if>
 						</div>

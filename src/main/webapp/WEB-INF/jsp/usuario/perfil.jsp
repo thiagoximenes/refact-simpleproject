@@ -1,4 +1,4 @@
-<%@ taglib tagdir="/WEB-INF/tags" prefix="toast"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="ct"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../header.jsp"%>
@@ -27,19 +27,18 @@
 <div class="container-fluid">
 	<div class="content">
 		<div class="card">
-			<div class="card-body profile-user-box">
+			<div class="card-body md-card">
 				<div class="row">
 					<div class="col-sm-8">
 						<div class="media">
-							<span class="float-left m-2 mr-4"> <img
-								style="height: 100px;" class="rounded-circle img-thumbnail"
-								src="<c:url value="/img/profile.png"/>" />
+							<span class="float-left m-2 mr-4">
+								<img class="rounded-circle img-thumbnail" src="<c:url value="/img/profile.png"/>" />
 							</span>
 							<div class="media-body">
 								<input type="hidden" id="bs-senha" class="invis" value="${usuarioLogado.usuario.senha}" />
 								<h4 class="my-1">${usuarioLogado.usuario.nome} ${usuarioLogado.usuario.sobrenome}</h4>
-								<p class="font-13 text-muted">${usuarioLogado.usuario.email}</p>
-								<p class="font-13">
+								<p class="text-muted">${usuarioLogado.usuario.email}</p>
+								<p>
 									<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN'}">
 		                        		Full access <span class="badge badge-warning">Admin Master</span>
 									</c:if>
@@ -47,7 +46,7 @@
 		                        		Limited access <span class="badge badge-secondary">User</span>
 									</c:if>
 								</p>
-								<p class="font-13">
+								<p>
 									Login: ${usuarioLogado.usuario.login} | Password: ********** (<a href="" data-toggle="modal" data-target="#myModal">change</a>)
 								</p>
 							</div>
@@ -56,8 +55,8 @@
 	
 					<div class="col-sm-4">
 						<div class="text-center mt-sm-0 mt-3 text-sm-right">
-							<a href="<c:url value='/usuarios/perfilupdate'/>" class="btn btn-light"> <i class="far fa-edit"></i>
-								Edit Profile
+							<a href="<c:url value='/usuarios/perfilupdate'/>" class="btn btn-light">
+								<i class="far fa-edit"></i> Edit Profile
 							</a>
 						</div>
 					</div>
@@ -85,7 +84,7 @@
 	</div>
 </div>
 
-<toast:notificationAlert />
+<ct:notificationAlert />
 
 <%@ include file="../../footer.jsp"%>
 

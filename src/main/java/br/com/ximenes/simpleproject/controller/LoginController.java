@@ -3,6 +3,7 @@ package br.com.ximenes.simpleproject.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
@@ -30,6 +31,7 @@ public class LoginController {
 		this.validator = validator;
 	}
 
+	@Get("/login")
 	public void form() {
 	}
 

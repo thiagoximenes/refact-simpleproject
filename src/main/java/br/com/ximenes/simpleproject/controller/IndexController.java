@@ -17,15 +17,13 @@ import br.com.ximenes.simpleproject.security.Protecao;
 public class IndexController {
 
 	private Result result;
-	private Usuario usuario;
 	private UsuarioDao usuarioDao;
 
 	protected IndexController() {}
 
 	@Inject
-	public IndexController(Result result, Usuario usuario, UsuarioDao usuarioDao) {
+	public IndexController(Result result, UsuarioDao usuarioDao) {
 		this.result = result;
-		this.usuario= usuario;
 		this.usuarioDao = usuarioDao;
 	}
 

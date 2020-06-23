@@ -46,14 +46,14 @@
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<thead>
-				<tr class="">
-					<th class="" scope="col">ID <i class="fas fa-sort"></i></th>
-					<th class="" scope="col">Name <i class="fas fa-sort"></i></th>
-					<th class="" scope="col">Email <i class="fas fa-sort"></i></th>
-					<th class="" scope="col">Login <i class="fas fa-sort"></i></th>
-					<th class="" scope="col">Type <i class="fas fa-sort"></i></th>
-					<th class="" scope="col">Password <i class="fas fa-sort"></i></th>
-					<th class="" scope="col">Actions <i class="fas fa-sort"></i></th>
+				<tr>
+					<th scope="col">ID <i class="fas fa-sort"></i></th>
+					<th scope="col">Name <i class="fas fa-sort"></i></th>
+					<th scope="col">Email <i class="fas fa-sort"></i></th>
+					<th scope="col">Login <i class="fas fa-sort"></i></th>
+					<th scope="col">Type <i class="fas fa-sort"></i></th>
+					<th scope="col">Password <i class="fas fa-sort"></i></th>
+					<th scope="col">Actions <i class="fas fa-sort"></i></th>
 				</tr>
 			</thead>
 			<tbody>
