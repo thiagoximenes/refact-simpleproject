@@ -1,6 +1,5 @@
-<%@ taglib tagdir="/WEB-INF/tags" prefix="alura"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ include file="../../header.jsp"%>
 
 <div class="container-fluid">
@@ -13,7 +12,7 @@
 							<li class="breadcrumb-item"><a
 								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
 							<li class="breadcrumb-item" aria-current="page"><a
-								href="${linkTo[UsuarioController].lista() }">Users</a></li>
+								href="${linkTo[UserController].list() }">Users</a></li>
 							<li class="breadcrumb-item active" aria-current="page">New</li>
 						</ol>
 					</nav>
@@ -28,10 +27,10 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col">
-				<form class="form-style form-basic" action="${linkTo[UsuarioController].adiciona(null)}" method="post">
-					<c:import url="../forms/form-usuario.jsp"></c:import>
+				<form class="form-style form-basic" action="${linkTo[UserController].add(null)}" method="post">
+					<c:import url="../forms/form-user.jsp"></c:import>
 					<input type="submit" class="btn btn-primary" value="Register" />
-					<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].lista()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
+					<a type="button" class="btn btn-dark" href="${linkTo[UserController].list()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
 						<i class="fa fa-arrow-left" aria-hidden="true"></i>
 					</a>
 				</form>

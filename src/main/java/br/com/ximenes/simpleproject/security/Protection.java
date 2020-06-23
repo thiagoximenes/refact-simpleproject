@@ -5,10 +5,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import br.com.ximenes.simpleproject.model.TipoUsuario;
+import br.com.ximenes.simpleproject.model.UserType;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface Protecao {
-	TipoUsuario[] tipo();
+public @interface Protection {
+	UserType[] type();
 }

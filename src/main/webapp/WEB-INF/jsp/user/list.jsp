@@ -1,6 +1,6 @@
-<%@taglib tagdir="/WEB-INF/tags" prefix="toast"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="ct"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ include file="../../header.jsp"%>
 
 <div class="container-fluid">
@@ -12,8 +12,7 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a
 								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
-							<li class="breadcrumb-item" aria-current="page"><a
-								href="${linkTo[UsuarioController].lista() }">Users</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[UserController].list() }">Users</a></li>
 							<li class="breadcrumb-item active" aria-current="page">List</li>
 						</ol>
 					</nav>
@@ -22,7 +21,7 @@
 			</div>
 			
 			<div class="col-auto">
-				<a class="btn btn-light" href="${linkTo[UsuarioController].novo()}">
+				<a class="btn btn-light" href="${linkTo[UserController].register()}">
 					<i class="fas fa-plus"></i> New user
 				</a>
 			</div>
@@ -31,7 +30,9 @@
 			<div class="col buscar">
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
-						<span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-search" aria-hidden="true"></i></span>
+						<span class="input-group-text" id="inputGroup-sizing-default">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</span>
 					</div>
 					<input type="text" class="form-control filterable" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 				</div>
@@ -39,8 +40,6 @@
 		</div>
 	</div>
 </div>
-
-
 
 <div class="container-fluid">
 	<div class="table-responsive">
@@ -57,24 +56,24 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${usuarios}" var="usuario">
+				<c:forEach items="${users}" var="user">
 					<tr class="tr-item" role="row">
-						<th> ${usuario.id}</th>
-						<td id="nome"> ${usuario.nome} ${usuario.sobrenome} 
-							<c:if test="${usuarioLogado.usuario.id == usuario.id}">
+						<th> ${user.id}</th>
+						<td id="name"> ${user.name} ${user.surname} 
+							<c:if test="${loggedUser.user.id == user.id}">
 								<span class="badge badge-success">Active</span>
 							</c:if>
 						</td>
-						<td id="email">${usuario.email}</td>
-						<td id="login">${usuario.login}</td>
-						<td id="tipo">${usuario.tipo}</td>
-						<td id="senha">${usuario.senha}</td>
+						<td id="email">${user.email}</td>
+						<td id="login">${user.login}</td>
+						<td id="type">${user.type}</td>
+						<td id="password">${user.password}</td>
 						<td class="tdedita">
-							<a href="<c:url value='/usuarios/${usuario.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Editar item"> <i class="far fa-edit"></i></a>
-							<c:if test="${usuarioLogado.usuario.id != usuario.id}">
-								<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/usuario/remove?usuario.id=${usuario.id}'/>"><i class="far fa-trash-alt"></i></a>
+							<a href="<c:url value='/users/${user.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Edit item"> <i class="far fa-edit"></i></a>
+							<c:if test="${loggedUser.user.id != user.id}">
+								<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/user/remove?user.id=${user.id}'/>"><i class="far fa-trash-alt"></i></a>
 							</c:if>
-							<a href="<c:url value='/usuarios/${usuario.id}/view'/>"><i class="far fa-eye"></i></a>
+							<a href="<c:url value='/users/${user.id}/view'/>"><i class="far fa-eye"></i></a>
 						</td>
 					</tr>
 				</c:forEach>
@@ -83,7 +82,7 @@
 	</div>
 </div>
 
-<toast:notificationAlert />
+<ct:notificationAlert />
 
 <%@ include file="../../footer.jsp"%>
 

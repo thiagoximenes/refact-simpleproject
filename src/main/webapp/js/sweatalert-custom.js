@@ -29,7 +29,6 @@ $(".deletarProduto").click(function(){
 $("#login-contact-us").click(function(){
 	 
 //	 var oi = $(this).data("href");
-
 	Swal.fire({
 		  title: '<strong>Contact us</strong>',
 		  html:

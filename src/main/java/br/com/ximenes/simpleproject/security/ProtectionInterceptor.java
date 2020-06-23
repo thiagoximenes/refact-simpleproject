@@ -13,37 +13,37 @@ import br.com.caelum.vraptor.controller.ControllerMethod;
 import br.com.caelum.vraptor.interceptor.SimpleInterceptorStack;
 import br.com.ximenes.simpleproject.controller.IndexController;
 import br.com.ximenes.simpleproject.controller.LoginController;
-import br.com.ximenes.simpleproject.model.TipoUsuario;
+import br.com.ximenes.simpleproject.model.UserType;
 
 @Intercepts
-public class ProtecaoInterceptor {
+public class ProtectionInterceptor {
 
-	private UsuarioLogado usuarioLogado;
+	private LoggedUser loggedUser;
 	private Result result;
 	private ControllerMethod method;
 
-	public ProtecaoInterceptor() {
+	public ProtectionInterceptor() {
 	}
 
 	@Inject
-	public ProtecaoInterceptor(UsuarioLogado usuarioLogado, Result result, ControllerMethod method) {
-		this.usuarioLogado = usuarioLogado;
+	public ProtectionInterceptor(LoggedUser loggedUser, Result result, ControllerMethod method) {
+		this.loggedUser = loggedUser;
 		this.result = result;
 		this.method = method;
 	}
 
 	@Accepts
 	public boolean accept() {
-		return method.containsAnnotation(Protecao.class);
+		return method.containsAnnotation(Protection.class);
 	}
 
 	@AroundCall
 	public void intercept(SimpleInterceptorStack stack) {
 
-		List<TipoUsuario> tipos = Arrays.asList(method.getMethod().getAnnotation(Protecao.class).tipo());
+		List<UserType> types = Arrays.asList(method.getMethod().getAnnotation(Protection.class).type());
 
-		if (usuarioLogado.isLogado()) {
-			if (tipos.contains(usuarioLogado.getTipo())) {
+		if (loggedUser.isLogado()) {
+			if (types.contains(loggedUser.getType())) {
 				stack.next();
 			} else {
 				result.include("msg", "You don't have permission to access.");

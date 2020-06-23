@@ -16,7 +16,7 @@ function toFilterHere(){
 	if(this.value.length > 0){
 		for (var i = 0; i < rows.length; i++) {
 			var row = rows[i];
-			var tdName = row.querySelector("#nome");
+			var tdName = row.querySelector("#name");
 			var name = tdName.textContent;
 			var expressao = new RegExp(this.value, "i");
 			if( !expressao.test(name)){

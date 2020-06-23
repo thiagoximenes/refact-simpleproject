@@ -8,7 +8,6 @@ var msgErroA = $("#msgErro-alteraSenha");
 var btn = $("#alterar-senha-btn");
 
 form.submit(function(event) {
-	
 	if(senhaNova.val().length<4){
 		
 		msgErroQ.removeClass("invis");
@@ -42,3 +41,25 @@ form.submit(function(event) {
 	}
 	return false;
 });
+
+
+var olho = $("#visu-olho");
+var asterisco = $("#visu-asterisco");
+var senha = $("#visu-senha");
+var i=1;
+
+olho.click(function() {
+	if(i==1){
+		asterisco.addClass("invis");
+		senha.removeClass("invis");
+		i==0;
+	}else{
+		asterisco.addClass("vis");
+		senha.removeClass("vis");
+		i==0;
+	}
+});
+
+olho.mouseleave(function(){
+});
+

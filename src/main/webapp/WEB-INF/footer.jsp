@@ -1,7 +1,5 @@
-
-		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	
-<!-- 		</div> -->
 	</div>
 
 	<!-- Importing external JavaScript files -->
@@ -15,8 +13,7 @@
 	<script src="<c:url value='/js/loader.js'/>"></script>
 	<script src="<c:url value='/js/table.js'/>"></script>
 	<script src="<c:url value='/js/toast.js'/>"></script>
-<%-- 	<script src="<c:url value='/js/verificasenha.js'/>"></script> --%>
-<%-- 	<script src="<c:url value='/js/visualiza-senha.js'/>"></script> --%>
+	<%-- <script src="<c:url value='/js/passverify.js'/>"></script> --%>
 
 </body>
 </html>

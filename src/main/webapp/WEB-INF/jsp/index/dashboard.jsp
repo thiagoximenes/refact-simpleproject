@@ -1,5 +1,4 @@
 <%@taglib tagdir="/WEB-INF/tags" prefix="ct"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ include file="../../header.jsp"%>
@@ -28,9 +27,9 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col-lg-4 col-md-6 col-sm-12">
-			<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN' }">
+			<c:if test="${loggedUser.user.type == 'ADMIN' }">
 				<span class="h4">Users List </span><small>Quick View</small><br/><br/>
-				<c:forEach items="${usuarios}" var="usuario">
+				<c:forEach items="${users}" var="user">
 					<div class="col-12">
 						<div class="card mb-1">
 							<div class="card-body sm-card">
@@ -39,16 +38,16 @@
 										<img class="rounded-circle img-thumbnail" src="<c:url value="/img/profile.png"/>" />
 									</span>
 									<div class="media-body">
-										<span>${usuario.nome} ${usuario.sobrenome}</span><br/>
-										<span>${usuario.email} / ${usuario.login}</span><br/>
-										<span><small>
-											<c:if test="${usuario.tipo == 'ADMIN'}">
-				                        		Full access <span class="badge badge-warning">Admin Master</span>
+										<span>${user.name} ${user.surname}</span><br/>
+										<span>${user.email} / ${user.login}</span><br/>
+											<c:if test="${user.type == 'ADMIN'}">
+												<span><small>Full access </small></span>
+												<span class="badge badge-warning">ADM</span>
 											</c:if>
-											<c:if test="${usuario.tipo == 'NORMAL'}">
-				                        		Limited access <span class="badge badge-secondary">User</span>
+											<c:if test="${user.type == 'NORMAL'}">
+				                        		<span><small>Limited access </small></span>
+				                        		<span class="badge badge-secondary">USR</span>
 											</c:if>
-										</small></span>
 									</div>
 								</div>
 							</div>
@@ -68,4 +67,3 @@
 <ct:notificationAlert />
 
 <%@ include file="../../footer.jsp"%>
-

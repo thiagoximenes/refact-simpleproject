@@ -4,6 +4,10 @@ html, body, p, a, table, ul, li, label, div, h1, h2, h3, h4 {
 	font-family: Open Sans!important;
 }
 
+p {
+	color: #212529;
+}
+
 .loader {
 	position: fixed;
 	left: 0px;

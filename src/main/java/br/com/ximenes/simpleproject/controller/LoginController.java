@@ -7,16 +7,16 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
-import br.com.ximenes.simpleproject.dao.UsuarioDao;
-import br.com.ximenes.simpleproject.model.TipoUsuario;
-import br.com.ximenes.simpleproject.model.Usuario;
-import br.com.ximenes.simpleproject.security.UsuarioLogado;
+import br.com.ximenes.simpleproject.dao.UserDao;
+import br.com.ximenes.simpleproject.model.UserType;
+import br.com.ximenes.simpleproject.model.User;
+import br.com.ximenes.simpleproject.security.LoggedUser;
 
 @Controller
 public class LoginController {
 
-	private UsuarioDao usuarioDao;
-	private UsuarioLogado usuarioLogado;
+	private UserDao userDao;
+	private LoggedUser loggedUser;
 	private Result result;
 	private Validator validator;
 
@@ -24,9 +24,9 @@ public class LoginController {
 	}
 
 	@Inject
-	public LoginController(UsuarioDao usuarioDao, UsuarioLogado usuarioLogado, Result result, Validator validator) {
-		this.usuarioDao = usuarioDao;
-		this.usuarioLogado = usuarioLogado;
+	public LoginController(UserDao userDao, LoggedUser loggedUser, Result result, Validator validator) {
+		this.userDao = userDao;
+		this.loggedUser = loggedUser;
 		this.result = result;
 		this.validator = validator;
 	}
@@ -35,17 +35,16 @@ public class LoginController {
 	public void form() {
 	}
 
-	public void autentica(String login, String senha) {
-		Usuario usuario = usuarioDao.busca(login, senha);
-		if (usuario != null) {
-
-			if (usuario.getTipo() == TipoUsuario.NORMAL) {
-				usuarioLogado.fazLogin(usuario);
+	public void authentic(String login, String password) {
+		User user = userDao.search(login, password);
+		if (user != null) {
+			if (user.getType() == UserType.NORMAL) {
+				loggedUser.doLogin(user);
 				result.include("msg", "Welcome, now you are connected.");
 				result.redirectTo(IndexController.class).dashboard();
 			} else {
-				if (usuario.getTipo() == TipoUsuario.ADMIN) {
-					usuarioLogado.fazLogin(usuario);
+				if (user.getType() == UserType.ADMIN) {
+					loggedUser.doLogin(user);
 					result.include("msg", "Welcome, now you are connected.");
 					result.redirectTo(IndexController.class).dashboard();
 				} else {
@@ -54,14 +53,14 @@ public class LoginController {
 				}
 			}
 		} else {
-			validator.add(new SimpleMessage("login_invalido", "Login ou senha incorretos."));
+			validator.add(new SimpleMessage("login_invalido", "Login or password incorrets."));
 			result.include("msg", "Access refused.");
 			validator.onErrorRedirectTo(this).form();
 		}
 	}
 
-	public void desloga() {
-		usuarioLogado.desloga();
+	public void logout(){
+		loggedUser.logout();
 		result.include("msg", "Bye.");
 		result.redirectTo(this).form();
 	}

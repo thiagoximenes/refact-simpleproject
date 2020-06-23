@@ -1,13 +1,13 @@
-<%@ taglib tagdir="/WEB-INF/tags" prefix="alert"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-	<form id="alterarSenhaForm" class="form-style" action="<c:url value="/usuarios/perfilupdate"/>" method="POST">
-		<input type="hidden" name="usuario.id" value="${usuarioLogado.usuario.id}" required />
-		<input type="hidden" name="usuario.nome" value="${usuarioLogado.usuario.nome}" /> 
-		<input type="hidden" name="usuario.sobrenome" value="${usuarioLogado.usuario.sobrenome}" />
-		<input type="hidden" name="usuario.email" value="${usuarioLogado.usuario.email}" />
-		<input type="hidden" name="usuario.login" value="${usuarioLogado.usuario.login}" />
-		<input type="hidden" name="usuario.tipo" value="${usuarioLogado.usuario.tipo}" />
+<span>AQUI</span>
+<form id="alterarSenhaForm" class="form-style" action="<c:url value="/users/perfilupdate"/>" method="post">
+	
+	<input type="hidden" name="user.id" value="${loggedUser.user.id}" required />
+	<input type="hidden" name="user.name" value="${loggedUser.user.name}" /> 
+	<input type="hidden" name="user.surname" value="${loggedUser.user.surname}" />
+	<input type="hidden" name="user.email" value="${loggedUser.user.email}" />
+	<input type="hidden" name="user.login" value="${loggedUser.user.login}" />
+	<input type="hidden" name="user.type" value="${loggedUser.user.type}" />
 
 	<div class="row">
 		<div class="col-sm-12">
@@ -19,7 +19,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<label for="rep_senha_nova">Repita a senha:</label> 
-				<input type="password" id="rep_senha_nova" name="usuario.senha" class="form-control" required />
+				<input type="password" id="rep_senha_nova" name="user.password" class="form-control" required />
 		</div>
 	</div>
 
@@ -53,5 +53,3 @@
 		</div>
 	</div>
 </form>
-
-

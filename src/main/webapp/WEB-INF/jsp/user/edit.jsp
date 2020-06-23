@@ -1,6 +1,5 @@
-<%@ taglib tagdir="/WEB-INF/tags" prefix="alura"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ include file="../../header.jsp"%>
 
 <div class="container-fluid">
@@ -10,11 +9,10 @@
 				<h6>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
-							<c:if test="${usuarioLogado.usuario.tipo == 'ADMIN' }">
-								<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[UsuarioController].lista() }">Users</a></li>
-							</c:if>
-							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[UsuarioController].perfil() }">Perfil</a></li>
+							<li class="breadcrumb-item"><a
+								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a
+								href="${linkTo[UserController].list() }">Users</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Edit</li>
 						</ol>
 					</nav>
@@ -29,14 +27,14 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col">
-				<form class="form-style form-basic" action="<c:url value="/usuarios/perfilupdate"/>" method="post">
-					<c:import url="../forms/form-usuario-perfil.jsp"></c:import>
+				<form class="form-style form-basic" action="<c:url value="/users/${user.id}"/>" method="post">
+					<c:import url="../forms/form-user.jsp"></c:import>
 					<button class="btn btn-primary" type="submit" name="_method" value="PUT">Update</button>
-					<a type="button" class="btn btn-dark" href="${linkTo[UsuarioController].perfil()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
+					<a type="button" class="btn btn-dark" href="${linkTo[UserController].list()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
 						<i class="fa fa-arrow-left" aria-hidden="true"></i>
 					</a>
 				</form>
-			</div>
+			</div>	
 		</div>
 	</div>
 </div>
@@ -51,7 +49,7 @@
 				<h4 class="modal-title" id="myModalLabel">Update password</h4>
 			</div>
 			<div class="modal-body">
-				<c:import url="../forms/form-usuario-alterasenha-perfil.jsp"></c:import>
+				<c:import url="../forms/form-userpass.jsp"></c:import>
 			</div>
 		</div>
 	</div>

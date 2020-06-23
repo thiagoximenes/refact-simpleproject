@@ -1,5 +1,4 @@
-<%-- <%@taglib tagdir="/WEB-INF/tags" prefix="alert"%> --%>
-<%@taglib tagdir="/WEB-INF/tags" prefix="toast"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="ct"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -10,16 +9,16 @@
 		<div class="col">
 		</div>
 		<div class="col-lg-4 col-sm-12 align-self-center">
-			<h3 class="font-weight-normal text-center">VRAPTOR SIMPLE PROJECT</h3>
-			<p class="text-center" style="border-bottom: 1px solid #f0f0f0; margin-bottom: 1.5rem; padding-bottom: 1.5rem;"><code>:powered by Thiago Ximenes</code>.
-			<form class="form-signin" method="post" action="${linkTo[LoginController].autentica(null, null)}">
+			<h3 class="text-center">VRAPTOR SIMPLE PROJECT</h3>
+			<p class="text-center" style="border-bottom: 1px solid #f0f0f0; margin-bottom: 1.5rem; padding-bottom: 1.5rem;"><small><code>:powered by Thiago Ximenes</code>.</small>
+			<form class="form-signin" method="post" action="${linkTo[LoginController].authentic(null, null)}">
 				<div class="form-label-group mb-3">
 					<label for="login">Username</label>
 					<input type="text" id="login" name="login" class="form-control" placeholder="Your username or email." autocomplete="off" required autofocus>
 				</div>
 				<div class="form-label-group mb-3">
 					<label for="senha">Password</label>
-					<input type="password" id="senha" name="senha" class="form-control" placeholder="*********" autocomplete="off" required>
+					<input type="password" id="password" name="password" class="form-control" placeholder="*********" autocomplete="off" required>
 				</div>
 				<div class="checkbox mb-3">
 					<label>
@@ -28,14 +27,14 @@
 				</div>
 				<div class="form-group mb-3">
 					<input class="btn btn-primary btn-block mb-3" name="commit" tabindex="3" type="submit" value="Login">
-					<p class="text-muted text-center login-out-newacc"> Don't have access? <a href="#" id="login-contact-us">Contact us</a>.</p>
+					<p class="text-muted text-center"> Don't have access? <a href="#">Contact us</a>.</p>
 				</div>
 			</form>
 			<div style="border-top: 1px solid #f0f0f0; margin-top: 1.5rem; padding-top: 1.0rem;">
 				<small class="text-muted">
 					1- Create a database, with the name <strong>simpleproject</strong>.
 					<br/>2- Run the server, and make a login (just try) for hibernate instantiate columns.
-					<br/>3- Now, insert this query: <br/><code>INSERT INTO Usuario (nome,sobrenome,login,senha,email,tipo) values ('Administrator','User','admin','admin', 'youraddress@somemail.com','ADMIN');</code>
+					<br/>3- Now, insert this query: <br/><code>INSERT INTO User (name, surname, login, password, email, type) values ('Administrator','User','admin','admin', 'youraddress@somemail.com','ADMIN');</code>
 					<br/>4- Restart server, and make login with credentials, User: <code>admin</code>, and Password: <code>admin</code>.</p>
 				</small>
 			</div>
@@ -44,8 +43,6 @@
 		</div>
 	</div>
 </div>
-		
-		
 
 <div class="container-fluid">
 	<div class="row">
@@ -81,6 +78,6 @@
 	</div>
 </div>
 
-<toast:notificationAlert />
+<ct:notificationAlert />
 
 <%@ include file="../../footer.jsp"%>
