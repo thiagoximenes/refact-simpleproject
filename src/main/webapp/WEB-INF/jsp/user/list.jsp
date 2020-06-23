@@ -69,11 +69,14 @@
 						<td id="type">${user.type}</td>
 						<td id="password">${user.password}</td>
 						<td class="tdedita">
-							<a href="<c:url value='/users/${user.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Edit item"> <i class="far fa-edit"></i></a>
+							<c:if test="${loggedUser.user.id == user.id}">
+								<a href="${linkTo[UserController].perfil()}"><i class="fas fa-users-cog"></i></a>
+							</c:if>							
 							<c:if test="${loggedUser.user.id != user.id}">
+								<a href="<c:url value='/users/${user.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Edit item"> <i class="far fa-edit"></i></a>
 								<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/user/remove?user.id=${user.id}'/>"><i class="far fa-trash-alt"></i></a>
+								<a href="<c:url value='/users/${user.id}/view'/>"><i class="far fa-eye"></i></a>
 							</c:if>
-							<a href="<c:url value='/users/${user.id}/view'/>"><i class="far fa-eye"></i></a>
 						</td>
 					</tr>
 				</c:forEach>

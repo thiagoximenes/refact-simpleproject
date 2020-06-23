@@ -1,0 +1,15 @@
+.sm-card{
+	padding:.40rem!important;
+}
+
+.sm-card span:first-child{
+	font-weight: 600;
+}
+
+.sm-card img{
+	height: 50px;
+}
+
+.md-card img{
+	height: 100px;		
+}

@@ -19,29 +19,24 @@
 <%-- <link rel="shortcut icon" href="<c:url value="/img/icon/favicon.ico"/>" type="image/x-icon"> --%>
 <%-- <link rel="icon" href="<c:url value="/img/icon/favicon.ico"/>" type="image/x-icon"> --%>
 
-<!-- Font Awesome -->
+<!-- CSS Local Import -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet" />
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<!-- CSS External Import -->
 <link href="<c:url value="/css/general.css"/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value="/css/form.css"/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value="/css/table.css"/>" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/css/card.css"/>" rel="stylesheet" type="text/css" />
 <link href="<c:url value="/css/plugins/iann-hover/hover-min.css"/>" rel="stylesheet" type="text/css" />
 
-
-	
-
-<!-- CSS Import -->
 <%-- <link href="<c:url value="/css/plugins/bootstrap/bootstrap.min.css"/>" rel="stylesheet" type="text/css" /> --%>
-
 <%-- <link href="<c:url value="/css/plugins/bootstrap/bootstrap-theme.css"/>" rel="stylesheet" type="text/css" /> --%>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
 <%-- <link href="<c:url value="/css/plugins/sweetalert/sweetalert.css"/>" rel="stylesheet" type="text/css" /> --%>
 <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
 <!-- <script src="sweetalert2.all.min.js"></script> -->
 <%-- <link href="<c:url value="/css/bootstrap-datepicker.css"/>" rel="stylesheet" type="text/css"> --%>
-
-
 
 </head>
 
