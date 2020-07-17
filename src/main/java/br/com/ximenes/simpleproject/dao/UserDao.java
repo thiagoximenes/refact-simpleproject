@@ -14,17 +14,8 @@ import br.com.ximenes.simpleproject.security.LoggedUser;
 @RequestScoped
 public class UserDao {
 
-	private EntityManager manager;
-	private LoggedUser loggedUser;
-
-	@Inject
-	public UserDao(EntityManager manager, LoggedUser loggedUser) {
-		this.manager = manager;
-		this.loggedUser = loggedUser;
-	}
-
-	public UserDao() {
-	}
+	@Inject private EntityManager manager;
+	@Inject private LoggedUser loggedUser;
 
 	public void add (User user) {
 		try {
@@ -48,22 +39,22 @@ public class UserDao {
 	}
 
 	public void update (User user) {
-			try {
-				manager.getTransaction().begin();
-				manager.merge(user);
-				if(user.getId() == loggedUser.getUser().getId()) {
-					loggedUser.getUser().setName(user.getName());
-					loggedUser.getUser().setSurname(user.getSurname());
-					loggedUser.getUser().setEmail(user.getEmail());
-					loggedUser.getUser().setLogin(user.getLogin());
-					loggedUser.getUser().setPassword(user.getPassword());
-					loggedUser.getUser().setType(user.getType());
-					loggedUser.getType();
-				}
-				manager.getTransaction().commit();
-			} catch (Exception e) {
-				manager.close();
+		try {
+			manager.getTransaction().begin();
+			manager.merge(user);
+			if(user.getId() == loggedUser.getUser().getId()) {
+				loggedUser.getUser().setName(user.getName());
+				loggedUser.getUser().setSurname(user.getSurname());
+				loggedUser.getUser().setEmail(user.getEmail());
+				loggedUser.getUser().setLogin(user.getLogin());
+				loggedUser.getUser().setPassword(user.getPassword());
+				loggedUser.getUser().setType(user.getType());
+				loggedUser.getType();
 			}
+			manager.getTransaction().commit();
+		} catch (Exception e) {
+			manager.close();
+		}
 	}
 
 	public List<User> list() {
