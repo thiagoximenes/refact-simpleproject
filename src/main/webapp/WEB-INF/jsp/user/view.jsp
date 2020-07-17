@@ -59,7 +59,7 @@
 								<i class="far fa-edit"></i> Edit User
 							</a>
 	                        <c:if test="${loggedUser.user.id != user.id}">
-								<a href="javascript:;" class="btn btn-light deletarProduto" data-href="<c:url value='/user/remove?user.id=${user.id}'/>">
+								<a href="javascript:;" class="btn btn-light deletarProduto" data-href="<c:url value='/users/${user.id}/remove'/>">
 									<i class="far fa-trash-alt"></i> Delete User
 								</a>
 							</c:if>

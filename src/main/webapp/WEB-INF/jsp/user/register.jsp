@@ -27,7 +27,7 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col">
-				<form class="form-style form-basic" action="${linkTo[UserController].add(null)}" method="post">
+				<form class="form-style form-basic" action="<c:url value="/users"/>" method="post">
 					<c:import url="../forms/form-user.jsp"></c:import>
 					<input type="submit" class="btn btn-primary" value="Register" />
 					<a type="button" class="btn btn-dark" href="${linkTo[UserController].list()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">

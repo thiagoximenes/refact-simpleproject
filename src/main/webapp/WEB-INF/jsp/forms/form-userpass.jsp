@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:if test="${user.id != null}">
-<form class="form-style" action="<c:url value="/users/${user.id}"/>" method="POST">
+<form class="form-style" action="<c:url value="/users/${user.id}/edit"/>" method="post">
 	<input type="hidden" name="user.id" value="${user.id}" required />
 	<input type="hidden" name="user.name" value="${user.name}" /> 
 	<input type="hidden" name="user.surname" value="${user.surname}" />
@@ -12,13 +12,13 @@
 </c:if>
 
 <c:if test="${user.id == null}">
-<form class="form-style" action="<c:url value="/users/${loggedUser.user.id}"/>" method="POST">
-	<input type="hidden" name="usuario.id" value="${loggedUser.user.id}" required />
-	<input type="hidden" name="usuario.name" value="${loggedUser.user.name}" /> 
-	<input type="hidden" name="usuario.surname" value="${loggedUser.user.surname}" />
-	<input type="hidden" name="usuario.email" value="${loggedUser.user.email}" />
-	<input type="hidden" name="usuario.login" value="${loggedUser.user.login}" />
-	<input type="hidden" name="usuario.type" value="${loggedUser.user.type}" />
+<form class="form-style" action="<c:url value="/users/${loggedUser.user.id}/edit"/>" method="POST">
+	<input type="hidden" name="user.id" value="${loggedUser.user.id}" required />
+	<input type="hidden" name="user.name" value="${loggedUser.user.name}" /> 
+	<input type="hidden" name="user.surname" value="${loggedUser.user.surname}" />
+	<input type="hidden" name="user.email" value="${loggedUser.user.email}" />
+	<input type="hidden" name="user.login" value="${loggedUser.user.login}" />
+	<input type="hidden" name="user.type" value="${loggedUser.user.type}" />
 </c:if>
 
 	<div class="row">

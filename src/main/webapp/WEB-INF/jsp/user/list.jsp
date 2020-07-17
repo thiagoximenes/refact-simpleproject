@@ -74,7 +74,7 @@
 							</c:if>							
 							<c:if test="${loggedUser.user.id != user.id}">
 								<a href="<c:url value='/users/${user.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Edit item"> <i class="far fa-edit"></i></a>
-								<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/user/remove?user.id=${user.id}'/>"><i class="far fa-trash-alt"></i></a>
+								<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/users/${user.id}/remove'/>"><i class="far fa-trash-alt"></i></a>
 								<a href="<c:url value='/users/${user.id}/view'/>"><i class="far fa-eye"></i></a>
 							</c:if>
 						</td>

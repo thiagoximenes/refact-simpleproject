@@ -27,7 +27,7 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col">
-				<form class="form-style form-basic" action="<c:url value="/users/${user.id}"/>" method="post">
+				<form class="form-style form-basic" action="<c:url value="/users/${user.id}/edit"/>" method="post">
 					<c:import url="../forms/form-user.jsp"></c:import>
 					<button class="btn btn-primary" type="submit" name="_method" value="PUT">Update</button>
 					<a type="button" class="btn btn-dark" href="${linkTo[UserController].list()}" data-toggle="tooltip" data-placement="bottom" title="Back to list">
